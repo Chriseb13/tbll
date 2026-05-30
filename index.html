@@ -939,8 +939,8 @@ footer .lil {
         <tr><th>#</th><th>Team</th><th>W</th><th>L</th><th>PCT</th></tr>
       </thead>
       <tbody>
-        <tr class="leader tbll-row"><td>1</td><td>TBLL</td><td>2</td><td>0</td><td class="pct-cell">1.000</td></tr>
-        <tr class="leader"><td>2</td><td>PCLL</td><td>2</td><td>0</td><td class="pct-cell">1.000</td></tr>
+        <tr class="leader tbll-row"><td>1</td><td>TBLL</td><td>3</td><td>0</td><td class="pct-cell">1.000</td></tr>
+        <tr><td><span class="rank-num">2</span></td><td>PCLL</td><td>2</td><td>1</td><td class="pct-cell">.667</td></tr>
         <tr><td><span class="rank-num">3</span></td><td>Bayshore</td><td>1</td><td>1</td><td class="pct-cell">.500</td></tr>
         <tr><td><span class="rank-num">3</span></td><td>Keystone</td><td>1</td><td>1</td><td class="pct-cell">.500</td></tr>
         <tr><td><span class="rank-num">3</span></td><td>West Tampa</td><td>1</td><td>1</td><td class="pct-cell">.500</td></tr>
@@ -950,28 +950,22 @@ footer .lil {
     </table>
   </div>
 
-  <!-- UPCOMING -->
-  <div class="section-header"><h2>Up Next</h2></div>
-  <div class="games">
-
-    <div class="game-card upcoming" data-game="tbll-pcll">
-      <div class="game-tape"></div>
-      <div class="game-date">
-        <span>FRI · MAY 29 · CHAMPIONSHIP RACE</span>
-        <span class="game-status-pill">6:30 PM</span>
-      </div>
-      <div class="matchup upcoming-mu">
-        <div class="team-block"><div class="name">TBLL ★</div></div>
-        <div class="vs-mark">vs</div>
-        <div class="team-block"><div class="name">PCLL</div></div>
-      </div>
-    </div>
-
-  </div>
-
   <!-- RESULTS -->
   <div class="section-header"><h2>Results</h2></div>
   <div class="games">
+
+    <div class="game-card" data-game="tbll-pcll">
+      <div class="game-tape"></div>
+      <div class="game-date">
+        <span>FRI · MAY 29 · WINNERS FINAL</span>
+        <span class="game-status-pill">FINAL</span>
+      </div>
+      <div class="matchup">
+        <div class="team-block winner"><div class="name">TBLL ★</div><div class="score">5</div></div>
+        <div class="vs-mark">vs</div>
+        <div class="team-block"><div class="name">PCLL</div><div class="score">2</div></div>
+      </div>
+    </div>
 
     <div class="game-card" data-game="keystone-ns">
       <div class="game-tape"></div>
@@ -1084,10 +1078,10 @@ footer .lil {
     </div>
 
     <div class="bracket-round">
-      <div class="bracket-round-label">Fri May 29</div>
+      <div class="bracket-round-label">Fri May 29 ✓</div>
       <div class="bracket-match">
-        <div class="teams">TBLL ★<br>vs PCLL</div>
-        <div class="meta">6:30 PM<br>WINNERS FINAL</div>
+        <div class="teams"><strong>TBLL ★</strong><br><span style="opacity:0.6">def. PCLL</span></div>
+        <div class="meta">5-2<br>WINNERS FINAL</div>
       </div>
     </div>
 
@@ -1117,12 +1111,12 @@ footer .lil {
   <div class="stats-grid">
     <div class="stat-tile">
       <div class="lbl">TOTAL RUNS</div>
-      <div class="val">122</div>
-      <div class="sub">across 7 games</div>
+      <div class="val">129</div>
+      <div class="sub">across 8 games</div>
     </div>
     <div class="stat-tile">
       <div class="lbl">AVG / GAME</div>
-      <div class="val">17.4</div>
+      <div class="val">16.1</div>
       <div class="sub">runs scored</div>
     </div>
     <div class="stat-tile">
@@ -1143,28 +1137,28 @@ footer .lil {
     <h3>Path to the Championship</h3>
     <div class="spotlight-stats">
       <div class="spotlight-stat">
-        <div class="num">29</div>
+        <div class="num">34</div>
         <div class="lab">Runs Scored</div>
       </div>
       <div class="spotlight-stat">
-        <div class="num">+17</div>
+        <div class="num">+20</div>
         <div class="lab">Run Diff</div>
       </div>
       <div class="spotlight-stat">
-        <div class="num">2-0</div>
+        <div class="num">3-0</div>
         <div class="lab">Record</div>
       </div>
       <div class="spotlight-stat">
-        <div class="num">14.5</div>
+        <div class="num">11.3</div>
         <div class="lab">Avg Runs</div>
       </div>
     </div>
     <ul class="path-list">
       <li class="done">✓ Beat West Tampa 11-9</li>
       <li class="done">✓ Beat IBLL 18-3</li>
-      <li class="next">→ Fri: vs PCLL = on to the finals</li>
-      <li class="future">○ Sat: backup game if needed</li>
-      <li class="future">○ Sun: CHAMPIONSHIP</li>
+      <li class="done">✓ Beat PCLL 5-2 (Winners Final)</li>
+      <li class="next">→ Sunday: CHAMPIONSHIP GAME</li>
+      <li class="future">○ Bring home the trophy!</li>
     </ul>
   </div>
 
@@ -1178,7 +1172,7 @@ footer .lil {
           <div class="team-nm">TBLL ★</div>
           <div class="city">Tampa, FL</div>
         </div>
-        <div class="record">2-0</div>
+        <div class="record">3-0</div>
       </div>
     </div>
     <div class="team-row" data-team="pcll">
@@ -1187,7 +1181,7 @@ footer .lil {
           <div class="team-nm">PCLL</div>
           <div class="city">Tampa, FL</div>
         </div>
-        <div class="record">2-0</div>
+        <div class="record">2-1</div>
       </div>
     </div>
     <div class="team-row" data-team="bayshore">
@@ -1205,7 +1199,7 @@ footer .lil {
           <div class="team-nm">West Tampa</div>
           <div class="city">Tampa, FL</div>
         </div>
-        <div class="record">0-1</div>
+        <div class="record">1-1</div>
       </div>
     </div>
     <div class="team-row" data-team="keystone">
@@ -1214,7 +1208,7 @@ footer .lil {
           <div class="team-nm">Keystone</div>
           <div class="city">Keystone, FL</div>
         </div>
-        <div class="record">0-1</div>
+        <div class="record">1-1</div>
       </div>
     </div>
     <div class="team-row" data-team="ibll">
@@ -1223,7 +1217,7 @@ footer .lil {
           <div class="team-nm">IBLL</div>
           <div class="city">Tampa, FL</div>
         </div>
-        <div class="record">0-1</div>
+        <div class="record">0-2</div>
       </div>
     </div>
     <div class="team-row" data-team="ns">
@@ -1232,7 +1226,7 @@ footer .lil {
           <div class="team-nm">North Seminole</div>
           <div class="city">Tampa, FL</div>
         </div>
-        <div class="record">0-1</div>
+        <div class="record">0-2</div>
       </div>
     </div>
   </div>
@@ -1261,7 +1255,7 @@ const recaps = {
   'tbll-wtampa': { margin: '+2 RUNS', type: 'CLOSE GAME', notes: 'TBLL\'s closest game so far', quote: 'Awesome battle to the final out.' },
   'pcll-keystone': { margin: '+6 RUNS', type: 'SOLID WIN', notes: 'PCLL starts the tournament strong', quote: 'Strong start for the PCLL crew.' },
   'bayshore-ns': { margin: '+15 RUNS', type: 'BIG WIN', notes: 'Bayshore came out swinging', quote: 'Bayshore\'s bats were on fire.' },
-  'tbll-pcll': { margin: 'TBD', type: 'WINNERS FINAL', notes: 'Both teams 2-0. Winner takes the top spot', quote: 'The biggest game of the week!' }
+  'tbll-pcll': { margin: '+3 RUNS', type: 'WINNERS FINAL', notes: 'TBLL takes down PCLL in a tight pitching battle to clinch a spot in Sunday\'s championship', quote: 'What a game! Off to the championship!' }
 };
 
 document.querySelectorAll('.game-card').forEach(card => {
@@ -1290,23 +1284,23 @@ document.querySelectorAll('.game-card').forEach(card => {
 // TEAM PATHS - each team's tournament journey
 const teamData = {
   tbll: {
-    stats: { rs: 29, ra: 12, diff: '+17', avg: 14.5 },
+    stats: { rs: 34, ra: 14, diff: '+20', avg: 11.3 },
     path: [
       { status: 'done win', text: '✓ Beat West Tampa 11-9' },
       { status: 'done win', text: '✓ Beat IBLL 18-3' },
-      { status: 'next', text: '→ FRI 6:30: vs PCLL (Winners Final)' },
-      { status: 'future', text: '○ Win Friday = on to the Championship Sunday' },
-      { status: 'future', text: '○ Lose Friday = play again Saturday' }
+      { status: 'done win', text: '✓ Beat PCLL 5-2 (Winners Final)' },
+      { status: 'next', text: '→ SUN: Championship Game' },
+      { status: 'future', text: '○ Bring home the trophy!' }
     ]
   },
   pcll: {
-    stats: { rs: 23, ra: 15, diff: '+8', avg: 11.5 },
+    stats: { rs: 25, ra: 20, diff: '+5', avg: 8.3 },
     path: [
       { status: 'done win', text: '✓ Beat Keystone 13-7' },
       { status: 'done win', text: '✓ Beat Bayshore 10-8' },
-      { status: 'next', text: '→ FRI 6:30: vs TBLL (Winners Final)' },
-      { status: 'future', text: '○ Win = on to the Championship Sunday' },
-      { status: 'future', text: '○ Lose = play again Saturday' }
+      { status: 'done loss', text: '• Lost to TBLL 2-5 (Winners Final)' },
+      { status: 'next', text: '→ SAT: must win to stay alive' },
+      { status: 'future', text: '○ Win Saturday = play Sunday' }
     ]
   },
   bayshore: {
