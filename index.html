@@ -969,46 +969,63 @@ footer .lil {
       </div>
     </div>
 
-    <div class="game-card upcoming" data-game="pcll-wtampa">
+    <div class="game-card upcoming" data-game="g1winner-wtampa">
       <div class="game-tape"></div>
       <div class="game-date">
         <span>SAT · MAY 30 · GAME 2</span>
         <span class="game-status-pill">AFTER GAME 1</span>
       </div>
       <div class="matchup upcoming-mu">
-        <div class="team-block"><div class="name">PCLL</div></div>
+        <div class="team-block"><div class="name">G1<br>Winner</div></div>
         <div class="vs-mark">vs</div>
         <div class="team-block"><div class="name">West<br>Tampa</div></div>
       </div>
     </div>
 
-    <div class="game-card upcoming" data-game="sat-final">
+    <div class="game-card upcoming" data-game="g2winner-pcll">
       <div class="game-tape"></div>
       <div class="game-date">
-        <span>SAT · MAY 30 · LOSERS FINAL</span>
-        <span class="game-status-pill">AFTER GAME 2</span>
+        <span>SUN · MAY 31 · LOSERS FINAL</span>
+        <span class="game-status-pill">SUNDAY AM</span>
       </div>
       <div class="matchup upcoming-mu">
-        <div class="team-block"><div class="name">G1<br>Winner</div></div>
-        <div class="vs-mark">vs</div>
         <div class="team-block"><div class="name">G2<br>Winner</div></div>
+        <div class="vs-mark">vs</div>
+        <div class="team-block"><div class="name">PCLL</div></div>
       </div>
     </div>
 
     <div class="game-card upcoming" data-game="championship">
       <div class="game-tape"></div>
       <div class="game-date">
-        <span>SUN · MAY 31 · CHAMPIONSHIP GAME</span>
+        <span>SUN · MAY 31 · CHAMPIONSHIP</span>
         <span class="game-status-pill">4:00 PM</span>
       </div>
       <div class="matchup upcoming-mu">
         <div class="team-block"><div class="name">TBLL ★</div></div>
         <div class="vs-mark">vs</div>
-        <div class="team-block"><div class="name">Sat<br>Winner</div></div>
+        <div class="team-block"><div class="name">Sun AM<br>Winner</div></div>
       </div>
       <div class="game-date" style="border-top:1px dashed #ddd;padding-top:8px;margin-top:8px;">
         <span style="font-size:11px;">FIELD 2 · TBLL COMPLEX</span>
-        <span style="font-size:11px;">BE THERE. BE LOUD. BE PROUD.</span>
+        <span style="font-size:11px;">TBLL WINS = TROPHY</span>
+      </div>
+    </div>
+
+    <div class="game-card upcoming" data-game="if-necessary">
+      <div class="game-tape"></div>
+      <div class="game-date">
+        <span>MON · JUN 1 · IF NECESSARY</span>
+        <span class="game-status-pill">TBD</span>
+      </div>
+      <div class="matchup upcoming-mu">
+        <div class="team-block"><div class="name">TBLL ★</div></div>
+        <div class="vs-mark">vs</div>
+        <div class="team-block"><div class="name">Sun AM<br>Winner</div></div>
+      </div>
+      <div class="game-date" style="border-top:1px dashed #ddd;padding-top:8px;margin-top:8px;">
+        <span style="font-size:11px;">ONLY IF CHALLENGER WINS SUN</span>
+        <span style="font-size:11px;">WINNER TAKES ALL</span>
       </div>
     </div>
 
@@ -1156,28 +1173,32 @@ footer .lil {
         <div class="meta">10:00 AM<br>GAME 1</div>
       </div>
       <div class="bracket-match">
-        <div class="teams">PCLL<br>vs West Tampa</div>
+        <div class="teams">G1 Winner<br>vs West Tampa</div>
         <div class="meta">AFTER G1<br>GAME 2</div>
       </div>
+    </div>
+
+    <div class="bracket-round">
+      <div class="bracket-round-label">Sun May 31 · AM</div>
       <div class="bracket-match tbd">
-        <div class="teams">G1 Winner<br>vs G2 Winner</div>
-        <div class="meta">AFTER G2<br>LOSERS FINAL</div>
+        <div class="teams">G2 Winner<br>vs PCLL</div>
+        <div class="meta">SUN AM<br>LOSERS FINAL</div>
       </div>
     </div>
 
     <div class="bracket-round">
       <div class="bracket-round-label">Sun May 31 · CHAMPIONSHIP</div>
       <div class="bracket-match tbd">
-        <div class="teams">TBLL ★<br>vs Sat Winner</div>
+        <div class="teams">TBLL ★<br>vs Sun AM Winner</div>
         <div class="meta">4:00 PM<br>FIELD 2 · TBLL COMPLEX</div>
       </div>
     </div>
 
     <div class="bracket-round">
-      <div class="bracket-round-label">Sun May 31</div>
-      <div class="bracket-match championship">
-        <div class="teams">Championship Game(s)</div>
-        <div class="meta">TBD<br>FINALS</div>
+      <div class="bracket-round-label">Mon Jun 1 · IF NECESSARY</div>
+      <div class="bracket-match tbd">
+        <div class="teams">TBLL ★<br>vs Sun AM Winner</div>
+        <div class="meta">TBD<br>ONLY IF CHALLENGER WINS SUN</div>
       </div>
     </div>
   </div>
@@ -1234,7 +1255,7 @@ footer .lil {
       <li class="done">✓ Beat IBLL 18-3</li>
       <li class="done">✓ Beat PCLL 5-2 (Winners Final)</li>
       <li class="next">→ SUN 4:00 PM: CHAMPIONSHIP @ Field 2</li>
-      <li class="future">○ Be there. Be loud. Be proud.</li>
+      <li class="future">○ Win once = trophy. Lose = Mon if necessary</li>
     </ul>
   </div>
 
@@ -1331,10 +1352,11 @@ const recaps = {
   'tbll-wtampa': { margin: '+2 RUNS', type: 'CLOSE GAME', notes: 'TBLL\'s closest game so far', quote: 'Awesome battle to the final out.' },
   'pcll-keystone': { margin: '+6 RUNS', type: 'SOLID WIN', notes: 'PCLL starts the tournament strong', quote: 'Strong start for the PCLL crew.' },
   'bayshore-ns': { margin: '+15 RUNS', type: 'BIG WIN', notes: 'Bayshore came out swinging', quote: 'Bayshore\'s bats were on fire.' },
-  'championship': { margin: 'TBD', type: 'CHAMPIONSHIP', notes: 'Sunday 4:00 PM at Field 2, TBLL Complex. The biggest game of the week!', quote: 'Be there. Be loud. Be proud.' },
-  'keystone-bayshore': { margin: 'TBD', type: 'GAME 1', notes: 'Saturday opener. Winner advances to Game 3', quote: 'Big game to keep the run going!' },
-  'pcll-wtampa': { margin: 'TBD', type: 'GAME 2', notes: 'PCLL drops in from the winners side. Winner advances to Game 3', quote: 'Two strong teams battling it out.' },
-  'sat-final': { margin: 'TBD', type: 'GAME 3', notes: 'Winner faces TBLL in Sunday\'s championship', quote: 'Last chance to make it to the title game!' },
+  'championship': { margin: 'TBD', type: 'CHAMPIONSHIP', notes: 'Sunday 4:00 PM at Field 2, TBLL Complex. TBLL wins this = trophy', quote: 'Be there. Be loud. Be proud.' },
+  'if-necessary': { margin: 'TBD', type: 'WINNER TAKES ALL', notes: 'Monday game ONLY happens if challenger wins Sunday. Double-elim format: challenger must beat TBLL twice', quote: 'One more if it comes to it.' },
+  'keystone-bayshore': { margin: 'TBD', type: 'SAT GAME 1', notes: 'Saturday opener at 10 AM. Winner faces West Tampa in Game 2', quote: 'Big game to keep the run going!' },
+  'g1winner-wtampa': { margin: 'TBD', type: 'SAT GAME 2', notes: 'Winner advances to Sunday AM Losers Final vs PCLL', quote: 'Two strong teams battling it out.' },
+  'g2winner-pcll': { margin: 'TBD', type: 'LOSERS FINAL', notes: 'Sunday morning. Winner earns the shot at TBLL in the championship', quote: 'Win and you play for it all.' },
   'tbll-pcll': { margin: '+3 RUNS', type: 'WINNERS FINAL', notes: 'TBLL takes down PCLL in a tight pitching battle to clinch a spot in Sunday\'s championship', quote: 'What a game! Off to the championship!' }
 };
 
@@ -1369,8 +1391,8 @@ const teamData = {
       { status: 'done win', text: '✓ Beat West Tampa 11-9' },
       { status: 'done win', text: '✓ Beat IBLL 18-3' },
       { status: 'done win', text: '✓ Beat PCLL 5-2 (Winners Final)' },
-      { status: 'next', text: '→ SUN 4:00 PM: Championship vs Sat winner' },
-      { status: 'future', text: '○ Field 2 · TBLL Complex · Bring home the trophy!' }
+      { status: 'next', text: '→ SUN 4:00 PM: Championship @ Field 2' },
+      { status: 'future', text: '○ Win once = TROPHY. Lose = Mon if necessary' }
     ]
   },
   pcll: {
@@ -1379,9 +1401,9 @@ const teamData = {
       { status: 'done win', text: '✓ Beat Keystone 13-7' },
       { status: 'done win', text: '✓ Beat Bayshore 10-8' },
       { status: 'done loss', text: '• Lost to TBLL 2-5 (Winners Final)' },
-      { status: 'next', text: '→ SAT Game 2: vs West Tampa' },
-      { status: 'future', text: '○ Win = advance to Game 3' },
-      { status: 'future', text: '○ Win Game 3 = championship Sunday' }
+      { status: 'next', text: '→ SUN AM: Losers Final vs G2 winner' },
+      { status: 'future', text: '○ Win = championship Sunday 4 PM' },
+      { status: 'future', text: '○ Must beat TBLL twice to win it all' }
     ]
   },
   bayshore: {
@@ -1390,8 +1412,8 @@ const teamData = {
       { status: 'done win', text: '✓ Beat North Seminole 15-0' },
       { status: 'done loss', text: '• Lost to PCLL 8-10' },
       { status: 'next', text: '→ SAT Game 1 (10 AM): vs Keystone' },
-      { status: 'future', text: '○ Win = advance to Game 3' },
-      { status: 'future', text: '○ Win Game 3 = championship Sunday' }
+      { status: 'future', text: '○ Win = SAT Game 2 vs West Tampa' },
+      { status: 'future', text: '○ Win again = SUN AM Losers Final' }
     ]
   },
   wtampa: {
@@ -1399,9 +1421,9 @@ const teamData = {
     path: [
       { status: 'done loss', text: '• Lost to TBLL 9-11' },
       { status: 'done win', text: '✓ Beat IBLL 15-0' },
-      { status: 'next', text: '→ SAT Game 2: vs PCLL' },
-      { status: 'future', text: '○ Win = advance to Game 3' },
-      { status: 'future', text: '○ Win Game 3 = championship Sunday' }
+      { status: 'next', text: '→ SAT Game 2: vs Game 1 winner' },
+      { status: 'future', text: '○ Win = SUN AM Losers Final vs PCLL' },
+      { status: 'future', text: '○ Win that = championship Sunday' }
     ]
   },
   keystone: {
@@ -1410,8 +1432,8 @@ const teamData = {
       { status: 'done loss', text: '• Lost to PCLL 7-13' },
       { status: 'done win', text: '✓ Beat North Seminole 15-0' },
       { status: 'next', text: '→ SAT Game 1 (10 AM): vs Bayshore' },
-      { status: 'future', text: '○ Win = advance to Game 3' },
-      { status: 'future', text: '○ Win Game 3 = championship Sunday' }
+      { status: 'future', text: '○ Win = SAT Game 2 vs West Tampa' },
+      { status: 'future', text: '○ Win again = SUN AM Losers Final' }
     ]
   },
   ibll: {
