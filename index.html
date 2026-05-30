@@ -204,6 +204,60 @@ body {
 .pinned .headline-tape {
   background: var(--tbll-red);
 }
+.headline-card.live {
+  background: var(--ink);
+  color: white;
+  border: 3px solid var(--tbll-red);
+  transform: rotate(-1deg);
+  box-shadow:
+    0 8px 20px rgba(200, 16, 46, 0.4),
+    inset 0 0 0 2px var(--neon-yellow);
+  animation: livePulse 2s ease-in-out infinite;
+}
+.live .headline-tape {
+  background: var(--neon-yellow);
+}
+.live .headline-text {
+  color: white;
+}
+.live .headline-sub {
+  color: rgba(255,255,255,0.85);
+}
+.live .headline-meta {
+  color: white;
+}
+.live .headline-date {
+  color: var(--neon-yellow);
+  opacity: 1;
+}
+.live-label {
+  background: var(--tbll-red);
+  color: white;
+  padding: 4px 10px 4px 8px;
+  border-radius: 2px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Bungee', sans-serif;
+}
+.live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--neon-yellow);
+  border-radius: 50%;
+  animation: liveBlink 1s ease-in-out infinite;
+}
+@keyframes liveBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+@keyframes livePulse {
+  0%, 100% { box-shadow: 0 8px 20px rgba(200, 16, 46, 0.4), inset 0 0 0 2px var(--neon-yellow); }
+  50% { box-shadow: 0 8px 28px rgba(200, 16, 46, 0.7), inset 0 0 0 2px var(--neon-yellow); }
+}
 .headline-meta {
   display: flex;
   justify-content: space-between;
@@ -1039,6 +1093,16 @@ footer .lil {
   <div class="section-header"><h2>Headlines</h2></div>
   <div class="headlines">
 
+    <div class="headline-card live">
+      <div class="headline-tape"></div>
+      <div class="headline-meta">
+        <span class="live-label"><span class="live-dot"></span> HAPPENING NOW</span>
+        <span class="headline-date">SAT 1:00 PM</span>
+      </div>
+      <h3 class="headline-text">Bayshore vs West Tampa: Win or Go Home</h3>
+      <p class="headline-sub">Saturday Game 2 underway. Winner advances to Sunday AM Losers Final vs PCLL. Loser goes home.</p>
+    </div>
+
     <div class="headline-card pinned">
       <div class="headline-tape"></div>
       <div class="headline-meta">
@@ -1069,25 +1133,6 @@ footer .lil {
       <p class="headline-sub">Tight pitching battle goes TBLL's way. Now 3-0 and the only undefeated team left in the tournament.</p>
     </div>
 
-  </div>
-
-  <!-- STANDINGS -->
-  <div class="section-header"><h2>Standings</h2></div>
-  <div class="standings-card">
-    <table class="standings">
-      <thead>
-        <tr><th>#</th><th>Team</th><th>W</th><th>L</th><th>PCT</th></tr>
-      </thead>
-      <tbody>
-        <tr class="leader tbll-row"><td>1</td><td>TBLL</td><td>3</td><td>0</td><td class="pct-cell">1.000</td></tr>
-        <tr><td><span class="rank-num">2</span></td><td>Bayshore</td><td>2</td><td>1</td><td class="pct-cell">.667</td></tr>
-        <tr><td><span class="rank-num">2</span></td><td>PCLL</td><td>2</td><td>1</td><td class="pct-cell">.667</td></tr>
-        <tr><td><span class="rank-num">4</span></td><td>West Tampa</td><td>1</td><td>1</td><td class="pct-cell">.500</td></tr>
-        <tr><td><span class="rank-num">5</span></td><td>Keystone</td><td>1</td><td>2</td><td class="pct-cell">.333</td></tr>
-        <tr><td><span class="rank-num">6</span></td><td>IBLL</td><td>0</td><td>2</td><td class="pct-cell">.000</td></tr>
-        <tr><td><span class="rank-num">6</span></td><td>North Seminole</td><td>0</td><td>2</td><td class="pct-cell">.000</td></tr>
-      </tbody>
-    </table>
   </div>
 
   <!-- UPCOMING -->
@@ -1156,6 +1201,25 @@ footer .lil {
 
   </div>
 
+
+  <!-- STANDINGS -->
+  <div class="section-header"><h2>Standings</h2></div>
+  <div class="standings-card">
+    <table class="standings">
+      <thead>
+        <tr><th>#</th><th>Team</th><th>W</th><th>L</th><th>PCT</th></tr>
+      </thead>
+      <tbody>
+        <tr class="leader tbll-row"><td>1</td><td>TBLL</td><td>3</td><td>0</td><td class="pct-cell">1.000</td></tr>
+        <tr><td><span class="rank-num">2</span></td><td>Bayshore</td><td>2</td><td>1</td><td class="pct-cell">.667</td></tr>
+        <tr><td><span class="rank-num">2</span></td><td>PCLL</td><td>2</td><td>1</td><td class="pct-cell">.667</td></tr>
+        <tr><td><span class="rank-num">4</span></td><td>West Tampa</td><td>1</td><td>1</td><td class="pct-cell">.500</td></tr>
+        <tr><td><span class="rank-num">5</span></td><td>Keystone</td><td>1</td><td>2</td><td class="pct-cell">.333</td></tr>
+        <tr><td><span class="rank-num">6</span></td><td>IBLL</td><td>0</td><td>2</td><td class="pct-cell">.000</td></tr>
+        <tr><td><span class="rank-num">6</span></td><td>North Seminole</td><td>0</td><td>2</td><td class="pct-cell">.000</td></tr>
+      </tbody>
+    </table>
+  </div>
   <!-- RESULTS -->
   <div class="section-header"><h2>Results</h2></div>
   <div class="games">
