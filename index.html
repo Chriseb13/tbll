@@ -168,7 +168,10 @@ body {
   display: inline-block;
 }
 .container > .section-header:first-of-type {
-  margin-top: 16px;
+  margin-top: 12px;
+}
+.champ-banner + .section-header {
+  margin-top: 12px !important;
 }
 .section-header h2 {
   font-family: 'Bungee', sans-serif;
@@ -992,6 +995,23 @@ footer .lil {
       </div>
     </div>
 
+    <div class="game-card upcoming" data-game="championship">
+      <div class="game-tape"></div>
+      <div class="game-date">
+        <span>SUN · MAY 31 · CHAMPIONSHIP GAME</span>
+        <span class="game-status-pill">4:00 PM</span>
+      </div>
+      <div class="matchup upcoming-mu">
+        <div class="team-block"><div class="name">TBLL ★</div></div>
+        <div class="vs-mark">vs</div>
+        <div class="team-block"><div class="name">Sat<br>Winner</div></div>
+      </div>
+      <div class="game-date" style="border-top:1px dashed #ddd;padding-top:8px;margin-top:8px;">
+        <span style="font-size:11px;">FIELD 2 · TBLL COMPLEX</span>
+        <span style="font-size:11px;">BE THERE. BE LOUD. BE PROUD.</span>
+      </div>
+    </div>
+
   </div>
 
   <!-- RESULTS -->
@@ -1146,10 +1166,10 @@ footer .lil {
     </div>
 
     <div class="bracket-round">
-      <div class="bracket-round-label">Sun May 31</div>
+      <div class="bracket-round-label">Sun May 31 · CHAMPIONSHIP</div>
       <div class="bracket-match tbd">
         <div class="teams">TBLL ★<br>vs Sat Winner</div>
-        <div class="meta">SUNDAY<br>CHAMPIONSHIP</div>
+        <div class="meta">4:00 PM<br>FIELD 2 · TBLL COMPLEX</div>
       </div>
     </div>
 
@@ -1190,7 +1210,7 @@ footer .lil {
   <!-- TBLL SPOTLIGHT -->
   <div class="section-header"><h2>TBLL Watch</h2></div>
   <div class="spotlight">
-    <h3>Path to the Championship</h3>
+    <h3>WE'RE IN THE CHAMPIONSHIP!</h3>
     <div class="spotlight-stats">
       <div class="spotlight-stat">
         <div class="num">34</div>
@@ -1213,8 +1233,8 @@ footer .lil {
       <li class="done">✓ Beat West Tampa 11-9</li>
       <li class="done">✓ Beat IBLL 18-3</li>
       <li class="done">✓ Beat PCLL 5-2 (Winners Final)</li>
-      <li class="next">→ Sunday: CHAMPIONSHIP GAME</li>
-      <li class="future">○ Bring home the trophy!</li>
+      <li class="next">→ SUN 4:00 PM: CHAMPIONSHIP @ Field 2</li>
+      <li class="future">○ Be there. Be loud. Be proud.</li>
     </ul>
   </div>
 
@@ -1311,6 +1331,7 @@ const recaps = {
   'tbll-wtampa': { margin: '+2 RUNS', type: 'CLOSE GAME', notes: 'TBLL\'s closest game so far', quote: 'Awesome battle to the final out.' },
   'pcll-keystone': { margin: '+6 RUNS', type: 'SOLID WIN', notes: 'PCLL starts the tournament strong', quote: 'Strong start for the PCLL crew.' },
   'bayshore-ns': { margin: '+15 RUNS', type: 'BIG WIN', notes: 'Bayshore came out swinging', quote: 'Bayshore\'s bats were on fire.' },
+  'championship': { margin: 'TBD', type: 'CHAMPIONSHIP', notes: 'Sunday 4:00 PM at Field 2, TBLL Complex. The biggest game of the week!', quote: 'Be there. Be loud. Be proud.' },
   'keystone-bayshore': { margin: 'TBD', type: 'GAME 1', notes: 'Saturday opener. Winner advances to Game 3', quote: 'Big game to keep the run going!' },
   'pcll-wtampa': { margin: 'TBD', type: 'GAME 2', notes: 'PCLL drops in from the winners side. Winner advances to Game 3', quote: 'Two strong teams battling it out.' },
   'sat-final': { margin: 'TBD', type: 'GAME 3', notes: 'Winner faces TBLL in Sunday\'s championship', quote: 'Last chance to make it to the title game!' },
@@ -1348,8 +1369,8 @@ const teamData = {
       { status: 'done win', text: '✓ Beat West Tampa 11-9' },
       { status: 'done win', text: '✓ Beat IBLL 18-3' },
       { status: 'done win', text: '✓ Beat PCLL 5-2 (Winners Final)' },
-      { status: 'next', text: '→ SUN: Championship vs Saturday winner' },
-      { status: 'future', text: '○ Bring home the trophy!' }
+      { status: 'next', text: '→ SUN 4:00 PM: Championship vs Sat winner' },
+      { status: 'future', text: '○ Field 2 · TBLL Complex · Bring home the trophy!' }
     ]
   },
   pcll: {
