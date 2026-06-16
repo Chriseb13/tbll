@@ -192,6 +192,15 @@
     font-family:'Bangers',cursive;letter-spacing:.06em;font-size:1.4rem}
   footer span{color:#fff}
 </style>
+<script>
+  if('scrollRestoration' in history){history.scrollRestoration='manual';}
+  window.addEventListener('load',function(){
+    if(location.hash){
+      try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}
+      window.scrollTo(0,0);
+    }
+  });
+</script>
 </head>
 <body>
 
