@@ -6,137 +6,206 @@
 <title>Tampa Bayshore All-Stars</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Archivo:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#f3f0e7;
-    --ink:#0d1b3e;
-    --ink2:#152a59;
-    --red:#d8232a;
-    --blue:#2b62d6;
-    --gold:#e7a51c;
-    --mute:#6c7691;
-    --line:#dfd9cb;
+    --paper:#fdf3da;
+    --ink:#14141c;
+    --red:#e2382f;
+    --blue:#2566d8;
+    --gold:#ffce2e;
+    --green:#27b56a;
+    --mute:#5e6275;
+    --halftone:rgba(20,20,28,.16);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;overflow-x:hidden}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;overflow-x:hidden;
+    background-image:radial-gradient(var(--halftone) 1.1px,transparent 1.2px);background-size:8px 8px}
+
+  /* shared comic bits */
+  .panel{background:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink)}
+  .bangers{font-family:'Bangers',cursive;letter-spacing:.02em}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;padding:30px 18px 26px}
-  .hero::before{content:"";position:absolute;inset:0;opacity:.16;
-    background:repeating-linear-gradient(115deg,var(--red) 0 14px,transparent 14px 28px,#fff 28px 42px,transparent 42px 56px,var(--blue) 56px 70px,transparent 70px 84px);
-    transform:skewY(-4deg) scale(1.4);transform-origin:top left}
-  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 120%,transparent,var(--ink) 70%)}
-  .hero-in{position:relative;z-index:2;max-width:860px;margin:0 auto;text-align:center}
-  .stars{color:var(--gold);letter-spacing:.55em;font-size:1rem;margin-bottom:8px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
-  .crest{font-family:'Chakra Petch';font-size:.66rem;letter-spacing:.34em;color:#a9bbe6;text-transform:uppercase;margin-bottom:10px}
-  h1{font-family:'Anton';line-height:.86;text-transform:uppercase;letter-spacing:.01em;
-    font-size:clamp(2.8rem,13vw,5.4rem);filter:drop-shadow(0 4px 14px rgba(0,0,0,.45))}
-  h1 .tampa{display:block;color:#fff}
-  h1 .bay{display:block;color:#fff}
-  h1 .all{display:block;color:var(--gold);-webkit-text-stroke:1px rgba(0,0,0,.15)}
-  .tagline{font-family:'Chakra Petch';font-weight:700;letter-spacing:.12em;font-size:.8rem;color:#cdd8f2;margin-top:12px;text-transform:uppercase}
+  .hero{position:relative;background:var(--blue);color:#fff;overflow:hidden;padding:34px 18px 30px;border-bottom:5px solid var(--ink)}
+  .hero::before{content:"";position:absolute;inset:-20%;z-index:0;
+    background:repeating-conic-gradient(from 0deg at 50% 38%, rgba(255,255,255,.10) 0deg 3deg, transparent 3deg 9deg)}
+  .hero::after{content:"";position:absolute;inset:0;z-index:0;opacity:.5;
+    background-image:radial-gradient(rgba(0,0,0,.18) 1.3px,transparent 1.4px);background-size:9px 9px}
+  .hero-in{position:relative;z-index:3;max-width:860px;margin:0 auto;text-align:center}
+  .crest{display:inline-block;font-family:'Chakra Petch';font-weight:700;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+    background:var(--ink);color:var(--gold);padding:5px 12px;border-radius:4px;transform:rotate(-2deg)}
+  h1{font-family:'Bangers',cursive;line-height:.92;text-transform:uppercase;margin:14px 0 6px;
+    font-size:clamp(3rem,15vw,6rem);color:#fff;-webkit-text-stroke:3px var(--ink);
+    text-shadow:5px 5px 0 var(--ink),0 0 0 #000;paint-order:stroke fill}
+  h1 .red{color:var(--gold)}
+  .tagline{display:inline-block;font-family:'Bangers',cursive;font-size:1.05rem;letter-spacing:.06em;color:var(--ink);
+    background:var(--gold);border:3px solid var(--ink);padding:4px 14px;border-radius:5px;transform:rotate(-1deg);
+    box-shadow:4px 4px 0 rgba(0,0,0,.35);margin-top:8px}
 
-  /* ---------- STICKY NAV ---------- */
-  nav{position:sticky;top:0;z-index:30;background:rgba(13,27,62,.97);backdrop-filter:blur(6px);
-    display:flex;justify-content:center;gap:4px;padding:9px 8px;border-bottom:3px solid var(--gold)}
-  nav a{font-family:'Chakra Petch';font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.74rem;
-    color:#aebbe0;text-decoration:none;padding:8px 13px;border-radius:9px;transition:.15s}
-  nav a:hover,nav a.active{color:#fff;background:var(--red)}
+  /* ---------- NAV ---------- */
+  nav{position:sticky;top:0;z-index:30;background:var(--ink);display:flex;justify-content:center;gap:4px;padding:9px 8px;border-bottom:4px solid var(--gold)}
+  nav a{font-family:'Bangers',cursive;letter-spacing:.06em;font-size:1.05rem;color:#cdd3e6;text-decoration:none;padding:5px 13px;border-radius:5px;transition:.12s}
+  nav a:hover,nav a.active{color:var(--ink);background:var(--gold)}
 
-  .wrap{max-width:860px;margin:0 auto;padding:22px 18px}
-  .seclabel{font-family:'Chakra Petch';font-weight:700;letter-spacing:.22em;font-size:.72rem;color:var(--red);text-transform:uppercase;margin-bottom:4px}
-  .sechead{font-family:'Anton';text-transform:uppercase;font-size:1.9rem;letter-spacing:.01em;margin-bottom:16px;line-height:1}
-  section{scroll-margin-top:60px;padding:14px 0 8px}
+  .wrap{max-width:860px;margin:0 auto;padding:24px 18px}
+  .seclabel{display:inline-block;font-family:'Chakra Petch';font-weight:700;letter-spacing:.14em;font-size:.66rem;color:#fff;background:var(--red);
+    text-transform:uppercase;padding:3px 10px;border:2px solid var(--ink);border-radius:4px;transform:rotate(-1deg);margin-bottom:8px}
+  .sechead{font-family:'Bangers',cursive;text-transform:uppercase;font-size:2.6rem;letter-spacing:.02em;margin-bottom:16px;line-height:1;
+    -webkit-text-stroke:1.5px var(--ink);color:#fff;text-shadow:3px 3px 0 var(--ink);paint-order:stroke fill}
+  .sechead.b{color:var(--blue)}.sechead.r{color:var(--red)}.sechead.g{color:var(--gold)}
+  section{scroll-margin-top:58px;padding:14px 0 10px}
+
+  /* ---------- WIN BANNER ---------- */
+  .result{position:relative;background:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink);padding:20px;margin-bottom:18px;overflow:hidden}
+  .result::before{content:"";position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(39,181,106,.4) 1.4px,transparent 1.5px);background-size:10px 10px}
+  .burst{position:absolute;top:-18px;right:-14px;width:118px;height:118px;background:var(--gold);z-index:2;
+    display:flex;align-items:center;justify-content:center;text-align:center;transform:rotate(8deg);
+    clip-path:polygon(50% 0,61% 23%,87% 13%,77% 38%,100% 50%,77% 62%,87% 87%,61% 77%,50% 100%,39% 77%,13% 87%,23% 62%,0 50%,23% 38%,13% 13%,39% 23%);
+    border:0}
+  .burst span{font-family:'Bangers',cursive;font-size:1.05rem;color:var(--red);line-height:.85;-webkit-text-stroke:.6px var(--ink);transform:rotate(-8deg)}
+  .res-top{position:relative;z-index:2;display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .res-badge{font-family:'Bangers',cursive;font-size:1.15rem;letter-spacing:.04em;background:var(--green);color:#fff;-webkit-text-stroke:1px var(--ink);padding:1px 12px;border:2px solid var(--ink);border-radius:5px}
+  .res-final{font-family:'Chakra Petch';font-weight:700;letter-spacing:.12em;font-size:.66rem;color:var(--mute);text-transform:uppercase}
+  .res-score{position:relative;z-index:2;font-family:'Bangers',cursive;font-size:1.9rem;text-transform:uppercase;line-height:1.02;-webkit-text-stroke:.5px var(--ink)}
+  .res-score .win{color:var(--blue)}
+  .res-score .sc{color:var(--red)}
+  .res-line{position:relative;z-index:2;color:#2a2c38;font-size:.88rem;line-height:1.5;margin-top:10px;max-width:80%}
+  .res-line b{color:var(--ink);font-weight:800}
 
   /* ---------- UP NEXT ---------- */
-  .upnext{position:relative;background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:#fff;border-radius:20px;padding:22px;overflow:hidden;
-    box-shadow:0 18px 40px -18px rgba(13,27,62,.6)}
-  .upnext::before{content:"";position:absolute;top:-40px;right:-30px;width:180px;height:180px;
-    background:radial-gradient(circle,var(--red),transparent 68%);opacity:.5}
-  .upnext::after{content:"★";position:absolute;bottom:-22px;left:-8px;font-size:7rem;color:rgba(231,165,28,.12);font-family:Georgia}
-  .un-top{position:relative;display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;z-index:2}
-  .un-tag{font-family:'Chakra Petch';font-weight:700;letter-spacing:.18em;font-size:.74rem;color:var(--gold);text-transform:uppercase}
-  .un-count{font-family:'Chakra Petch';font-weight:700;font-size:.72rem;letter-spacing:.06em;color:#fff;background:var(--red);padding:5px 11px;border-radius:20px}
-  .un-match{position:relative;z-index:2;font-family:'Anton';font-size:clamp(1.7rem,7vw,2.6rem);line-height:1;text-transform:uppercase;text-align:center;margin:6px 0 4px}
-  .un-match .vs{color:var(--gold);font-size:.7em;display:block;margin:4px 0}
+  .upnext{position:relative;background:var(--ink);color:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--red);padding:22px;overflow:hidden}
+  .upnext::before{content:"";position:absolute;inset:-30%;
+    background:repeating-conic-gradient(from 0deg at 70% 28%, rgba(255,255,255,.06) 0deg 3deg, transparent 3deg 10deg)}
+  .un-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .un-tag{font-family:'Bangers',cursive;font-size:1.4rem;letter-spacing:.04em;color:var(--gold);-webkit-text-stroke:1px #000}
+  .un-count{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:.04em;color:#fff;background:var(--red);border:2px solid #fff;padding:1px 12px;border-radius:20px}
+  .un-match{position:relative;z-index:2;text-align:center;font-family:'Bangers',cursive;font-size:clamp(2rem,8vw,3rem);line-height:1;text-transform:uppercase;-webkit-text-stroke:1px #000;color:#fff}
   .un-match .us{color:var(--gold)}
-  .un-meta{position:relative;z-index:2;text-align:center;font-family:'Chakra Petch';font-weight:700;letter-spacing:.08em;color:#bcccef;font-size:.8rem;margin-top:8px;text-transform:uppercase}
+  .un-vs{display:inline-block;background:var(--gold);color:var(--ink);font-size:.62em;padding:0 12px;margin:6px 0;border:2px solid #000;border-radius:5px;transform:rotate(-2deg);-webkit-text-stroke:0}
+  .un-meta{position:relative;z-index:2;text-align:center;font-family:'Chakra Petch';font-weight:700;letter-spacing:.08em;color:#aeb6d0;font-size:.78rem;margin-top:10px;text-transform:uppercase}
 
   /* ---------- BRACKET ---------- */
-  .bracket{display:flex;flex-direction:column;gap:0}
-  .bround{margin-bottom:6px}
-  .brlabel{font-family:'Chakra Petch';font-weight:700;letter-spacing:.14em;font-size:.66rem;color:var(--mute);text-transform:uppercase;margin:14px 0 8px;display:flex;align-items:center;gap:8px}
-  .brlabel::after{content:"";flex:1;height:1px;background:var(--line)}
-  .bgame{display:flex;align-items:stretch;gap:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
-    box-shadow:0 6px 16px -12px rgba(13,27,62,.4)}
-  .bg-num{flex:0 0 50px;background:var(--ink);color:var(--gold);font-family:'Anton';font-size:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
-  .bg-num small{font-family:'Chakra Petch';font-size:.5rem;color:#9fb0d8;letter-spacing:.1em;margin-top:3px}
-  .bg-body{flex:1;padding:12px 14px}
-  .bg-when{font-family:'Chakra Petch';font-weight:700;font-size:.64rem;letter-spacing:.1em;color:var(--mute);text-transform:uppercase;margin-bottom:6px}
-  .bg-teams{font-family:'Anton';font-size:1.15rem;text-transform:uppercase;line-height:1.05}
-  .bg-teams .vs{color:var(--red);font-size:.7em;margin:0 6px}
+  .brlabel{display:inline-block;font-family:'Bangers',cursive;font-size:1.15rem;letter-spacing:.04em;color:#fff;background:var(--ink);padding:2px 12px;border-radius:5px;margin:16px 0 9px;transform:rotate(-1deg)}
+  .bgame{display:flex;align-items:stretch;background:#fff;border:3px solid var(--ink);border-radius:6px;overflow:hidden;box-shadow:5px 5px 0 var(--ink)}
+  .bg-num{flex:0 0 56px;background:var(--blue);color:#fff;font-family:'Bangers',cursive;font-size:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:.9;-webkit-text-stroke:1px var(--ink);border-right:3px solid var(--ink)}
+  .bg-num small{font-family:'Chakra Petch';font-size:.5rem;color:#dfe7ff;letter-spacing:.08em;margin-top:3px;-webkit-text-stroke:0}
+  .bgame.done .bg-num{background:var(--green)}
+  .bgame.elim .bg-num{background:var(--red)}
+  .bgame.title .bg-num{background:var(--gold);color:var(--ink);-webkit-text-stroke:1px var(--ink)}
+  .bg-body{flex:1;padding:11px 14px}
+  .bg-when{font-family:'Chakra Petch';font-weight:700;font-size:.62rem;letter-spacing:.08em;color:var(--mute);text-transform:uppercase;margin-bottom:5px}
+  .bg-teams{font-family:'Bangers',cursive;font-size:1.35rem;text-transform:uppercase;line-height:1.05;letter-spacing:.02em}
+  .bg-teams .vs{color:var(--red);font-size:.8em;margin:0 5px}
   .bg-teams .us{color:var(--blue)}
-  .bg-pill{display:inline-block;font-family:'Chakra Petch';font-weight:700;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
-  .pill-elim{background:#fde7e8;color:var(--red)}
-  .pill-title{background:#fbeecb;color:#9a6b00}
-  .connector{width:2px;height:14px;background:var(--line);margin:0 auto}
+  .bg-score{color:var(--green)}
+  .bg-score.lose{color:#aaa}
+  .pill{display:inline-block;font-family:'Chakra Petch';font-weight:700;font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border:1.5px solid var(--ink);border-radius:5px;margin-left:6px;vertical-align:middle}
+  .pill-final{background:var(--green);color:#fff}
+  .pill-elim{background:#fde2e1;color:var(--red)}
+  .pill-title{background:var(--gold);color:var(--ink)}
+  .connector{width:4px;height:14px;background:var(--ink);margin:0 auto;border-radius:3px}
 
   /* ---------- SCHEDULE ---------- */
-  .sched{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-  .srow{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .sched{background:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink);overflow:hidden}
+  .srow{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:13px 16px;border-bottom:2px solid var(--ink)}
   .srow:last-child{border-bottom:none}
-  .srow.us{background:#f6f9ff}
-  .s-num{font-family:'Anton';font-size:1.3rem;color:var(--red)}
+  .srow.us{background:#fffbe9}
+  .s-num{font-family:'Bangers',cursive;font-size:1.6rem;color:var(--red);-webkit-text-stroke:.5px var(--ink)}
   .s-match{font-weight:800;font-size:.95rem}
   .s-match .us{color:var(--blue)}
-  .s-date{font-family:'Chakra Petch';font-weight:700;font-size:.74rem;color:var(--mute);text-align:right;letter-spacing:.04em}
+  .s-win{display:inline-block;font-family:'Bangers',cursive;font-size:1rem;color:#fff;background:var(--green);border:2px solid var(--ink);padding:0 8px;border-radius:5px;margin-left:8px}
+  .s-date{font-family:'Chakra Petch';font-weight:700;font-size:.72rem;color:var(--mute);text-align:right;letter-spacing:.03em}
 
   /* ---------- PLAYERS ---------- */
-  .players{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:11px}
-  .pcard{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 14px;cursor:pointer;transition:.18s;text-align:center;overflow:hidden}
-  .pcard:hover{transform:translateY(-3px);box-shadow:0 14px 26px -16px rgba(13,27,62,.5);border-color:var(--blue)}
-  .pcard.star{border-color:var(--gold);background:linear-gradient(#fff,#fffdf5)}
-  .pc-num{font-family:'Anton';font-size:2.4rem;color:var(--ink);line-height:.9}
-  .pcard.star .pc-num{color:var(--gold)}
-  .pc-name{font-weight:800;font-size:.92rem;margin-top:6px}
-  .pc-star{position:absolute;top:8px;right:10px;color:var(--gold);font-size:.9rem}
-  .pc-tap{font-family:'Chakra Petch';font-weight:700;font-size:.58rem;letter-spacing:.1em;color:var(--mute);text-transform:uppercase;margin-top:8px}
+  .players{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:13px}
+  .pcard{position:relative;background:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:5px 5px 0 var(--ink);padding:16px 12px 14px;cursor:pointer;transition:.12s;text-align:center;overflow:hidden}
+  .pcard::before{content:"";position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(37,102,216,.3) 1.2px,transparent 1.3px);background-size:9px 9px;z-index:0}
+  .pcard:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--red)}
+  .pcard:active{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+  .pc-num{position:relative;z-index:1;font-family:'Bangers',cursive;font-size:2.9rem;line-height:.85;color:var(--blue);-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 rgba(0,0,0,.18);paint-order:stroke fill}
+  .pc-name{position:relative;z-index:1;font-weight:800;font-size:.92rem;margin-top:8px}
+  .pc-tap{position:relative;z-index:1;font-family:'Bangers',cursive;font-size:.85rem;letter-spacing:.05em;color:var(--red);margin-top:6px}
 
   /* ---------- MODAL ---------- */
-  .modal{position:fixed;inset:0;background:rgba(13,27,62,.78);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:80;padding:18px}
+  .modal{position:fixed;inset:0;background:rgba(20,20,28,.72);display:none;align-items:center;justify-content:center;z-index:80;padding:18px;
+    background-image:radial-gradient(rgba(0,0,0,.4) 1.4px,transparent 1.5px);background-size:9px 9px}
   .modal.on{display:flex}
-  .mcard{background:var(--paper);border-radius:20px;max-width:380px;width:100%;overflow:hidden;animation:pop .25s ease}
-  @keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
-  .mhead{background:var(--ink);color:#fff;padding:22px;text-align:center;position:relative}
-  .mhead.star{background:linear-gradient(135deg,var(--ink),#3a2c00)}
-  .m-num{font-family:'Anton';font-size:3.4rem;line-height:.9;color:var(--gold)}
-  .m-name{font-family:'Anton';font-size:1.5rem;text-transform:uppercase;margin-top:4px}
-  .m-pos{font-family:'Chakra Petch';font-weight:700;letter-spacing:.12em;font-size:.72rem;color:#bcccef;margin-top:4px;text-transform:uppercase}
-  .mbody{padding:22px}
-  .m-statlabel{font-family:'Chakra Petch';font-weight:700;letter-spacing:.14em;font-size:.66rem;color:var(--red);text-transform:uppercase;margin-bottom:10px}
-  .m-statbox{background:#fff;border:2px dashed var(--line);border-radius:12px;padding:26px 14px;text-align:center;color:var(--mute);font-size:.84rem}
-  .mclose{position:absolute;top:12px;right:14px;color:#fff;font-family:'Anton';font-size:1.4rem;cursor:pointer;opacity:.8}
-  .mclose:hover{opacity:1}
+  .mcard{background:var(--paper);border:4px solid var(--ink);border-radius:8px;box-shadow:9px 9px 0 var(--red);max-width:360px;width:100%;overflow:hidden;animation:pop .22s ease}
+  @keyframes pop{from{transform:scale(.9) rotate(-1deg);opacity:0}to{transform:none;opacity:1}}
+  .mhead{position:relative;background:var(--blue);color:#fff;padding:24px;text-align:center;border-bottom:4px solid var(--ink);overflow:hidden}
+  .mhead::before{content:"";position:absolute;inset:-30%;background:repeating-conic-gradient(from 0deg at 50% 50%, rgba(255,255,255,.1) 0deg 3deg, transparent 3deg 9deg)}
+  .m-num{position:relative;z-index:2;font-family:'Bangers',cursive;font-size:4rem;line-height:.85;color:var(--gold);-webkit-text-stroke:2.5px var(--ink);text-shadow:4px 4px 0 var(--ink);paint-order:stroke fill}
+  .m-name{position:relative;z-index:2;font-family:'Bangers',cursive;font-size:1.7rem;text-transform:uppercase;margin-top:6px;-webkit-text-stroke:1px var(--ink)}
+  .m-pos{position:relative;z-index:2;font-family:'Chakra Petch';font-weight:700;letter-spacing:.1em;font-size:.68rem;color:#dfe7ff;margin-top:5px;text-transform:uppercase}
+  .mbody{padding:20px}
+  .m-statlabel{display:inline-block;font-family:'Bangers',cursive;font-size:1.1rem;color:#fff;background:var(--red);border:2px solid var(--ink);padding:1px 10px;border-radius:5px;margin-bottom:12px}
+  .m-statbox{background:#fff;border:3px dashed var(--ink);border-radius:6px;padding:24px 14px;text-align:center;color:var(--mute);font-size:.84rem;font-weight:600}
+  .stathead{font-family:'Bangers',cursive;font-size:1.05rem;color:var(--ink);margin:14px 0 7px;letter-spacing:.03em}
+  .statrow{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+  .statcell{background:#fff;border:2px solid var(--ink);border-radius:6px;text-align:center;padding:7px 2px}
+  .statcell .v{font-family:'Bangers',cursive;font-size:1.4rem;line-height:1;color:var(--blue)}
+  .statcell .l{font-family:'Chakra Petch';font-weight:700;font-size:.5rem;letter-spacing:.06em;color:var(--mute);margin-top:3px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .chip{font-family:'Bangers',cursive;font-size:.85rem;letter-spacing:.03em;color:var(--ink);background:var(--gold);border:2px solid var(--ink);padding:2px 10px;border-radius:14px}
+  .rdr-hype{position:relative;background:var(--gold);border:3px solid var(--ink);border-radius:10px;box-shadow:6px 6px 0 var(--ink);padding:16px 18px;margin:8px 0 22px;text-align:center;transform:rotate(-1deg)}
+  .rdr-hype .big{font-family:'Bangers',cursive;font-size:1.85rem;line-height:1.02;color:var(--red);-webkit-text-stroke:.5px var(--ink)}
+  .rdr-hype .sub{font-family:'Chakra Petch';font-weight:700;letter-spacing:.12em;font-size:.62rem;color:var(--ink);margin-top:5px;text-transform:uppercase}
+  .mclose{position:absolute;top:10px;right:14px;z-index:3;font-family:'Bangers',cursive;font-size:1.5rem;color:#fff;cursor:pointer;-webkit-text-stroke:1px var(--ink)}
 
-  footer{background:var(--ink);color:#9fb0d8;text-align:center;padding:24px 18px;margin-top:30px;font-family:'Chakra Petch';font-weight:700;letter-spacing:.12em;font-size:.74rem}
-  footer .gg{color:var(--gold)}
+  /* ---------- STORIES ---------- */
+  .storylist{display:flex;flex-direction:column;gap:14px}
+  .scard{position:relative;background:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink);padding:16px 18px;cursor:pointer;transition:.12s;overflow:hidden}
+  .scard::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(20,20,28,.18) 1.1px,transparent 1.2px);background-size:9px 9px;z-index:0}
+  .scard:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--red)}
+  .scard:active{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+  .sc-kick{position:relative;z-index:1;display:inline-block;font-family:'Chakra Petch';font-weight:700;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:2px 9px;border:2px solid var(--ink);border-radius:4px;margin-bottom:8px}
+  .sc-kick.k1{background:var(--green)}.sc-kick.k2{background:var(--red)}.sc-kick.k3{background:var(--blue)}
+  .sc-head{position:relative;z-index:1;font-family:'Bangers',cursive;font-size:1.85rem;line-height:.98;text-transform:uppercase;letter-spacing:.02em;-webkit-text-stroke:.5px var(--ink)}
+  .sc-dek{position:relative;z-index:1;color:#3a3d4d;font-size:.85rem;line-height:1.4;margin-top:6px}
+  .sc-read{position:relative;z-index:1;display:inline-block;font-family:'Bangers',cursive;font-size:1rem;color:var(--red);margin-top:10px;letter-spacing:.03em}
+  .scard.feature{padding:24px 22px}
+  .feat-tag{position:relative;z-index:1;display:inline-block;font-family:'Bangers',cursive;font-size:1rem;color:#fff;background:var(--red);border:2px solid var(--ink);padding:1px 12px;border-radius:6px;margin-left:8px;transform:rotate(-2deg)}
+  .feat-head{font-size:2.7rem !important;line-height:.95;margin-top:6px}
+
+  /* STORY READER */
+  .reader{position:fixed;inset:0;background:rgba(20,20,28,.82);display:none;z-index:90;overflow-y:auto;
+    background-image:radial-gradient(rgba(0,0,0,.4) 1.4px,transparent 1.5px);background-size:9px 9px}
+  .reader.on{display:block}
+  .rdr-card{background:var(--paper);border:4px solid var(--ink);border-radius:8px;box-shadow:10px 10px 0 var(--red);max-width:680px;margin:30px auto;overflow:hidden}
+  .rdr-head{position:relative;background:var(--blue);color:#fff;padding:26px 24px 22px;border-bottom:4px solid var(--ink);overflow:hidden}
+  .rdr-head::before{content:"";position:absolute;inset:-30%;background:repeating-conic-gradient(from 0deg at 28% 30%, rgba(255,255,255,.09) 0deg 3deg, transparent 3deg 10deg)}
+  .rdr-head.k1{background:var(--green)}.rdr-head.k2{background:var(--red)}.rdr-head.k3{background:var(--blue)}
+  .rdr-kick{position:relative;z-index:2;font-family:'Chakra Petch';font-weight:700;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+  .rdr-title{position:relative;z-index:2;font-family:'Bangers',cursive;font-size:2.5rem;line-height:.96;text-transform:uppercase;margin:8px 0 6px;-webkit-text-stroke:1px var(--ink);text-shadow:3px 3px 0 var(--ink);paint-order:stroke fill}
+  .rdr-dek{position:relative;z-index:2;font-size:.95rem;line-height:1.4;color:#f3f6ff;font-weight:600}
+  .rdr-byline{position:relative;z-index:2;font-family:'Chakra Petch';font-weight:700;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-top:10px}
+  .rdr-body{padding:24px}
+  .rdr-body p{font-size:1rem;line-height:1.62;margin-bottom:16px;color:#23252f}
+  .rdr-body p:first-child::first-letter{font-family:'Bangers',cursive;font-size:3.2rem;float:left;line-height:.8;margin:4px 10px 0 0;color:var(--red);-webkit-text-stroke:1px var(--ink)}
+  .rdr-body .pull{font-family:'Bangers',cursive;font-size:1.5rem;line-height:1.1;color:var(--blue);border-left:5px solid var(--gold);padding:6px 0 6px 16px;margin:6px 0 18px;text-transform:uppercase;-webkit-text-stroke:.3px var(--ink)}
+  .rdr-close{position:absolute;top:12px;right:16px;z-index:3;font-family:'Bangers',cursive;font-size:1.7rem;color:#fff;cursor:pointer;-webkit-text-stroke:1px var(--ink)}
+  .rdr-back{display:block;width:100%;font-family:'Bangers',cursive;font-size:1.2rem;letter-spacing:.04em;color:#fff;background:var(--ink);border:none;padding:14px;cursor:pointer;border-top:4px solid var(--gold)}
+
+  footer{background:var(--ink);color:var(--gold);text-align:center;padding:26px 18px;margin-top:34px;border-top:5px solid var(--gold);
+    font-family:'Bangers',cursive;letter-spacing:.06em;font-size:1.4rem}
+  footer span{color:#fff}
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="hero-in">
-    <div class="stars">★ ★ ★</div>
-    <div class="crest">TBLL + BSLL · 9-11 Softball</div>
-    <h1><span class="tampa">Tampa</span><span class="bay">Bayshore</span><span class="all">All-Stars</span></h1>
+    <span class="crest">TBLL + BSLL · 9-11 Softball</span>
+    <h1>Tampa Bayshore<br><span class="red">All-Stars</span></h1>
     <div class="tagline">Summer 2026 · Double Elimination</div>
   </div>
 </header>
 
 <nav id="nav">
   <a href="#next">Up Next</a>
+  <a href="#stories">Story</a>
   <a href="#bracket">Bracket</a>
   <a href="#schedule">Schedule</a>
   <a href="#players">Players</a>
@@ -144,52 +213,64 @@
 
 <div class="wrap">
 
-  <!-- UP NEXT -->
+  <!-- LATEST RESULT + UP NEXT -->
   <section id="next">
+    <div class="result">
+      <div class="burst"><span>WALK<br>OFF!</span></div>
+      <div class="res-top">
+        <span class="res-badge">WIN</span>
+        <span class="res-final">Game 1 · Final · Mon June 15</span>
+      </div>
+      <div class="res-score"><span class="win">Tampa Bayshore 7</span>, <span class="sc">Palma Ceia 6</span></div>
+      <div class="res-line">Down <b>5-0</b> in the 2nd and clawed all the way back. <b>Eliza Oh</b> drove in the winning run in the bottom of the 7th, and <b>Olivia Moon</b> robbed one with a Willie Mays catch in center.</div>
+    </div>
+
     <div class="upnext">
       <div class="un-top">
         <span class="un-tag">★ Up Next</span>
-        <span class="un-count" id="count">Game 1</span>
+        <span class="un-count" id="count">Game 2</span>
       </div>
-      <div class="un-match">
-        Palma Ceia
-        <span class="vs">VS</span>
-        <span class="us">Tampa Bayshore</span>
-      </div>
-      <div class="un-meta" id="unmeta">Mon · June 15 · Palma Ceia Field 1</div>
+      <div class="un-match"><span class="us">Tampa Bayshore</span><br><span class="un-vs">VS</span><br>Keystone</div>
+      <div class="un-meta">Tue · June 16 · Palma Ceia Field 1</div>
     </div>
+  </section>
+
+  <!-- STORIES -->
+  <section id="stories">
+    <span class="seclabel">Game 1 Recap</span>
+    <div class="sechead b">The Story</div>
+    <div class="storylist" id="storylist"></div>
   </section>
 
   <!-- BRACKET -->
   <section id="bracket">
-    <div class="seclabel">The Road</div>
-    <div class="sechead">Bracket</div>
-    <div class="bracket">
-      <div class="brlabel">Opening Round</div>
-      <div class="bgame"><div class="bg-num">1<small>MON</small></div><div class="bg-body"><div class="bg-when">June 15</div><div class="bg-teams">Palma Ceia <span class="vs">v</span> <span class="us">Tampa Bayshore</span></div></div></div>
-      <div class="connector"></div>
-      <div class="brlabel">Round 2</div>
-      <div class="bgame"><div class="bg-num">2<small>TUE</small></div><div class="bg-body"><div class="bg-when">June 16</div><div class="bg-teams">Winner 1 <span class="vs">v</span> Keystone</div></div></div>
-      <div class="connector"></div>
-      <div class="brlabel">Loser's Bracket</div>
-      <div class="bgame"><div class="bg-num">3<small>WED</small></div><div class="bg-body"><div class="bg-when">June 17 <span class="bg-pill pill-elim">Elimination</span></div><div class="bg-teams">Loser 1 <span class="vs">v</span> Loser 2</div></div></div>
-      <div class="connector"></div>
-      <div class="brlabel">Championship</div>
-      <div class="bgame"><div class="bg-num">4<small>THU</small></div><div class="bg-body"><div class="bg-when">June 18 <span class="bg-pill pill-title">Title</span></div><div class="bg-teams">Winner 2 <span class="vs">v</span> Winner 3</div></div></div>
-      <div class="connector"></div>
-      <div class="brlabel">If Necessary</div>
-      <div class="bgame"><div class="bg-num">5<small>FRI</small></div><div class="bg-body"><div class="bg-when">June 19 <span class="bg-pill pill-title">If Game</span></div><div class="bg-teams">Winner 2 <span class="vs">v</span> Winner 3</div></div></div>
-    </div>
+    <span class="seclabel">The Road</span>
+    <div class="sechead b">Bracket</div>
+
+    <span class="brlabel">Opening Round</span>
+    <div class="bgame done"><div class="bg-num">1<small>MON</small></div><div class="bg-body"><div class="bg-when">June 15 <span class="pill pill-final">Final</span></div><div class="bg-teams"><span class="us">Tampa Bayshore</span> <span class="bg-score">7</span> <span class="vs">v</span> Palma Ceia <span class="bg-score lose">6</span></div></div></div>
+    <div class="connector"></div>
+    <span class="brlabel">Round 2</span>
+    <div class="bgame"><div class="bg-num">2<small>TUE</small></div><div class="bg-body"><div class="bg-when">June 16</div><div class="bg-teams"><span class="us">Tampa Bayshore</span> <span class="vs">v</span> Keystone</div></div></div>
+    <div class="connector"></div>
+    <span class="brlabel">Loser's Bracket</span>
+    <div class="bgame elim"><div class="bg-num">3<small>WED</small></div><div class="bg-body"><div class="bg-when">June 17 <span class="pill pill-elim">Elimination</span></div><div class="bg-teams">Palma Ceia <span class="vs">v</span> Loser 2</div></div></div>
+    <div class="connector"></div>
+    <span class="brlabel">Championship</span>
+    <div class="bgame title"><div class="bg-num">4<small>THU</small></div><div class="bg-body"><div class="bg-when">June 18 <span class="pill pill-title">Title</span></div><div class="bg-teams">Winner 2 <span class="vs">v</span> Winner 3</div></div></div>
+    <div class="connector"></div>
+    <span class="brlabel">If Necessary</span>
+    <div class="bgame title"><div class="bg-num">5<small>FRI</small></div><div class="bg-body"><div class="bg-when">June 19 <span class="pill pill-title">If Game</span></div><div class="bg-teams">Winner 2 <span class="vs">v</span> Winner 3</div></div></div>
   </section>
 
   <!-- SCHEDULE -->
   <section id="schedule">
-    <div class="seclabel">All Games · Palma Ceia Field 1</div>
-    <div class="sechead">Schedule</div>
+    <span class="seclabel">All Games · Palma Ceia Field 1</span>
+    <div class="sechead r">Schedule</div>
     <div class="sched">
-      <div class="srow us"><span class="s-num">1</span><span class="s-match">Palma Ceia v <span class="us">Tampa Bayshore</span></span><span class="s-date">Mon · 6/15</span></div>
-      <div class="srow"><span class="s-num">2</span><span class="s-match">Winner 1 v Keystone</span><span class="s-date">Tue · 6/16</span></div>
-      <div class="srow"><span class="s-num">3</span><span class="s-match">Loser 1 v Loser 2</span><span class="s-date">Wed · 6/17</span></div>
+      <div class="srow us"><span class="s-num">1</span><span class="s-match"><span class="us">Tampa Bayshore</span> 7, Palma Ceia 6 <span class="s-win">W</span></span><span class="s-date">Mon · 6/15</span></div>
+      <div class="srow"><span class="s-num">2</span><span class="s-match"><span class="us">Tampa Bayshore</span> v Keystone</span><span class="s-date">Tue · 6/16</span></div>
+      <div class="srow"><span class="s-num">3</span><span class="s-match">Palma Ceia v Loser 2</span><span class="s-date">Wed · 6/17</span></div>
       <div class="srow"><span class="s-num">4</span><span class="s-match">Winner 2 v Winner 3</span><span class="s-date">Thu · 6/18</span></div>
       <div class="srow"><span class="s-num">5</span><span class="s-match">Winner 2 v Winner 3 (IF)</span><span class="s-date">Fri · 6/19</span></div>
     </div>
@@ -197,8 +278,8 @@
 
   <!-- PLAYERS -->
   <section id="players">
-    <div class="seclabel">Tap a player</div>
-    <div class="sechead">Roster</div>
+    <span class="seclabel">Tap a player</span>
+    <div class="sechead g">Roster</div>
     <div class="players" id="players"></div>
   </section>
 
@@ -210,37 +291,103 @@
       <span class="mclose" id="mclose">✕</span>
       <div class="m-num" id="mnum">5</div>
       <div class="m-name" id="mname">Player</div>
-      <div class="m-pos">Tampa Bayshore All-Stars</div>
+      <div class="m-pos" id="mpos">Tampa Bayshore All-Stars</div>
     </div>
-    <div class="mbody">
-      <div class="m-statlabel">Season Stats</div>
-      <div class="m-statbox">Stats screenshot coming soon</div>
-    </div>
+    <div class="mbody" id="mbody"></div>
   </div>
 </div>
 
-<footer>TAMPA BAYSHORE ALL-STARS · <span class="gg">GO GET IT ★</span></footer>
+<div class="reader" id="reader">
+  <div class="rdr-card">
+    <div class="rdr-head" id="rdrHead">
+      <span class="rdr-close" id="rdrClose">✕</span>
+      <div class="rdr-kick" id="rdrKick"></div>
+      <div class="rdr-title" id="rdrTitle"></div>
+      <div class="rdr-dek" id="rdrDek"></div>
+      <div class="rdr-byline" id="rdrByline"></div>
+    </div>
+    <div class="rdr-body" id="rdrBody"></div>
+    <button class="rdr-back" id="rdrBack">← Back to Stories</button>
+  </div>
+</div>
+
+<footer>GO GET IT <span>★ TAMPA BAYSHORE ★</span></footer>
 
 <script>
 const ROSTER=[
-  {n:"5",name:"Brooklyn Barnwell"},
-  {n:"4",name:"Audrey Girsch"},
-  {n:"16",name:"Beyonca Bridges"},
-  {n:"15",name:"Charlotte Barber"},
-  {n:"24",name:"Cora Zichmiller"},
-  {n:"10",name:"Eliza Oh"},
-  {n:"19",name:"Emma Ritchie"},
-  {n:"6",name:"Haven Dalrymple"},
-  {n:"3",name:"Liv Walker"},
-  {n:"14",name:"Maisy Brewer"},
-  {n:"9",name:"Olivia Moon"},
+  {n:"5",name:"Brooklyn Barnwell",pos:"2B",bat:{ab:3,r:1,h:1,rbi:1,bb:0,so:0},notes:["RBI","Run Scored"]},
+  {n:"4",name:"Audrey Girsch",pos:"RF",bat:{ab:3,r:0,h:0,rbi:0,bb:0,so:2}},
+  {n:"16",name:"Charley Seckinger",pos:"C",bat:{ab:3,r:1,h:2,rbi:0,bb:0,so:0},notes:["2 Hits","Stolen Base"]},
+  {n:"33",name:"Briley Bishop",pos:"SS",bat:{ab:2,r:1,h:1,rbi:2,bb:1,so:0},notes:["Team-High 2 RBI"]},
+  {n:"15",name:"Charlotte Barber",pos:"1B",bat:{ab:1,r:0,h:0,rbi:0,bb:2,so:1},notes:["2 Walks","Stolen Base"]},
+  {n:"24",name:"Cora Zichmiller",pos:"P",bat:{ab:2,r:1,h:0,rbi:0,bb:1,so:1},pitch:{ip:"3.0",h:2,r:5,er:2,bb:4,so:0},notes:["Started in the Circle"]},
+  {n:"10",name:"Eliza Oh",pos:"P",bat:{ab:3,r:1,h:2,rbi:0,bb:0,so:0},pitch:{ip:"4.0",h:2,r:1,er:1,bb:2,so:5},notes:["Winning Pitcher","Walk-Off Hit","Showtime"]},
+  {n:"19",name:"Emma Ritchie",pos:"LF",bat:{ab:3,r:0,h:0,rbi:0,bb:0,so:0},notes:["Tying-Run At-Bat"]},
+  {n:"6",name:"Haven Dalrymple",pos:""},
+  {n:"3",name:"Liv Walker",pos:"3B",bat:{ab:3,r:0,h:1,rbi:0,bb:0,so:0},notes:["Game-Saving Double Play"]},
+  {n:"14",name:"Maisy Brewer",pos:"LF",bat:{ab:3,r:1,h:0,rbi:1,bb:0,so:1},notes:["Stolen Base","Scored the Winning Run"]},
+  {n:"9",name:"Olivia Moon",pos:"CF",bat:{ab:2,r:1,h:1,rbi:0,bb:1,so:0},notes:["The Catch","Tying Run"]},
 ];
 
-// players
+// ---------- STORIES ----------
+const STORIES=[
+  {
+    k:"k1", kick:"Game 1 Recap \u00b7 June 15",
+    head:"Effort Knows No Score",
+    dek:"Down 5-0 in the second, Tampa Bayshore rallied past Palma Ceia for a 7-6 walk-off win in the tournament opener.",
+    byline:"Tampa Bayshore Beat",
+    body:[
+      "Tampa Bayshore spotted Palma Ceia a five-run head start and spent the rest of the night taking it back, rallying for a 7-6 walk-off win in the tournament opener Monday at Palma Ceia.",
+      "Palma Ceia struck first and struck hard, plating four runs in the top of the first and another in the second. A handful of early Tampa Bayshore miscues helped the lead grow to 5-0 before the All-Stars found their footing.",
+      {pull:"Effort and attitude is all we can control."},
+      "Tampa Bayshore plays by that creed, and trailing by five, the All-Stars leaned on it. The bats came alive with a run in the second and three more in the third, trimming the deficit to 5-4 and turning the momentum.",
+      "The comeback drew even in the fourth. Olivia Moon opened the rally with a single to shortstop and took second when the throw sailed away. With two strikes, Emma Ritchie put the ball in play to push Moon to third, an unselfish at-bat that set the table. Moon scored on a passed ball and Charlotte Barber drew a walk to cap the rally, tying the game at five.",
+      "Moon was just as busy on defense. With two outs in the top of the fifth and a Palma Ceia runner on second following a double, she tracked down a long drive to center and held the runner in place, a highlight-reel grab that drew comparisons to Willie Mays and Jim Edmonds.",
+      {hype:"The Greatest Catch You Will See In Little League"},
+      "Palma Ceia regained the lead at 6-5 in the sixth on a double and a fielder's choice, but Tampa Bayshore answered in the bottom half. Briley Bishop lined a single, Liv Walker followed with a single to right to move Bishop to third, and Brooklyn Barnwell put a ball in play that brought Bishop home to tie it at six. Tampa Bayshore loaded the bases with a chance to win it, but a line-drive double play and a fielder's choice stranded the runners and forced extra innings.",
+      {pull:"Two outs, the game on the line, one swing left."},
+      "Extra innings brought the Texas tiebreaker, with a runner placed on second to begin each half. In the top of the seventh, Tampa Bayshore turned the defensive play of the game. A grounder started a double play, Liv Walker took the throw at first for the first out, then fired a bullet across the diamond to Briley Bishop covering third, doubling off the runner who had wandered too far. The threat was erased, with Eliza Oh dealing in the circle.",
+      "In the bottom half, Maisy Brewer began at second as the tiebreaker runner. Charlotte Barber struck out and Audrey Girsch popped out, leaving Tampa Bayshore down to its final out. Eliza Oh delivered, lining a single to right field. Brewer raced home when the ball got away from the right fielder, and Tampa Bayshore had its 7-6 walk-off.",
+      {pull:"Down five. All the way back."},
+      "Oh, nicknamed Showtime, carried the staff in relief and provided the winning hit. Cora Zichmiller set the tone in the circle early, working ground balls, while catcher Charley Seckinger managed the pitchers and threw out a Palma Ceia runner attempting to steal. Bishop supplied the power in the middle of the order, Barber anchored first base and reached repeatedly, Walker bounced back from an early error to make the game-saving double play, and Brewer scored the run that won it.",
+      "Tampa Bayshore advances to face Keystone next."
+    ]
+  }
+];
+
+const slist=document.getElementById('storylist');
+(function(){
+  const s=STORIES[0];
+  const c=document.createElement('div');c.className='scard feature';
+  c.innerHTML=`<span class="sc-kick ${s.k}">${s.kick}</span><span class="feat-tag">★ Walk-Off Win</span><div class="sc-head feat-head">${s.head}</div><div class="sc-dek">${s.dek}</div><span class="sc-read">Read the Full Story ▸</span>`;
+  c.onclick=()=>openStory(0);
+  slist.appendChild(c);
+})();
+const reader=document.getElementById('reader');
+function openStory(i){
+  const s=STORIES[i];
+  document.getElementById('rdrHead').className='rdr-head '+s.k;
+  document.getElementById('rdrKick').textContent=s.kick;
+  document.getElementById('rdrTitle').textContent=s.head;
+  document.getElementById('rdrDek').textContent=s.dek;
+  document.getElementById('rdrByline').textContent='By '+s.byline;
+  const body=document.getElementById('rdrBody');body.innerHTML='';
+  s.body.forEach(p=>{
+    if(typeof p==='string'){const el=document.createElement('p');el.textContent=p;body.appendChild(el);}
+    else if(p.hype){const el=document.createElement('div');el.className='rdr-hype';el.innerHTML='<div class="big">\u2605 '+p.hype+' \u2605</div><div class="sub">The Catch \u00b7 Top of the 5th</div>';body.appendChild(el);}
+    else{const el=document.createElement('div');el.className='pull';el.textContent=p.pull;body.appendChild(el);}
+  });
+  reader.classList.add('on');reader.scrollTop=0;
+}
+function closeReader(){reader.classList.remove('on');}
+document.getElementById('rdrClose').onclick=closeReader;
+document.getElementById('rdrBack').onclick=closeReader;
+reader.onclick=e=>{if(e.target===reader)closeReader();};
+
 const grid=document.getElementById('players');
 ROSTER.forEach(p=>{
-  const c=document.createElement('div');c.className='pcard'+(p.star?' star':'');
-  c.innerHTML=`${p.star?'<span class="pc-star">★</span>':''}<div class="pc-num">${p.n}</div><div class="pc-name">${p.name}</div><div class="pc-tap">View stats</div>`;
+  const c=document.createElement('div');c.className='pcard';
+  c.innerHTML=`<div class="pc-num">${p.n}</div><div class="pc-name">${p.name}</div><div class="pc-tap">View Stats</div>`;
   c.onclick=()=>openP(p);
   grid.appendChild(c);
 });
@@ -248,30 +395,33 @@ const modal=document.getElementById('modal');
 function openP(p){
   document.getElementById('mnum').textContent=p.n;
   document.getElementById('mname').textContent=p.name;
-  document.getElementById('mhead').className='mhead'+(p.star?' star':'');
+  document.getElementById('mpos').textContent=(p.pos?p.pos+' \u00b7 ':'')+'Tampa Bayshore All-Stars';
+  const b=document.getElementById('mbody');
+  const cells=(o,keys)=>keys.map(k=>`<div class="statcell"><div class="v">${o[k]}</div><div class="l">${k.toUpperCase()}</div></div>`).join('');
+  if(!p.bat){
+    b.innerHTML='<div class="m-statlabel">Game 1 vs Palma Ceia</div><div class="m-statbox">No box-score line for this game.</div>';
+  } else {
+    let h='<div class="m-statlabel">Game 1 vs Palma Ceia</div>';
+    h+='<div class="stathead">Batting</div><div class="statrow">'+cells(p.bat,['ab','r','h','rbi','bb','so'])+'</div>';
+    if(p.pitch){h+='<div class="stathead">Pitching</div><div class="statrow">'+cells(p.pitch,['ip','h','r','er','bb','so'])+'</div>';}
+    if(p.notes&&p.notes.length){h+='<div class="chips">'+p.notes.map(n=>`<span class="chip">\u2605 ${n}</span>`).join('')+'</div>';}
+    b.innerHTML=h;
+  }
   modal.classList.add('on');
 }
 document.getElementById('mclose').onclick=()=>modal.classList.remove('on');
 modal.onclick=e=>{if(e.target===modal)modal.classList.remove('on');};
 
-// up next countdown
-const GAMES=[
-  {d:new Date(2026,5,15),label:"Game 1"},
-  {d:new Date(2026,5,16),label:"Game 2"},
-  {d:new Date(2026,5,17),label:"Game 3"},
-  {d:new Date(2026,5,18),label:"Game 4"},
-  {d:new Date(2026,5,19),label:"Game 5"},
-];
+// up next countdown (next game = Game 2, June 16)
+const nextGame=new Date(2026,5,16);
 const today=new Date();today.setHours(0,0,0,0);
-const g1=GAMES[0].d;
-const days=Math.round((g1-today)/86400000);
+const days=Math.round((nextGame-today)/86400000);
 const cnt=document.getElementById('count');
-if(days>1)cnt.textContent=days+' days out';
-else if(days===1)cnt.textContent='Tomorrow';
-else if(days===0)cnt.textContent='Today';
-else cnt.textContent='Game 1';
+if(days>1)cnt.textContent='Game 2 · '+days+' days';
+else if(days===1)cnt.textContent='Game 2 · Tomorrow';
+else if(days===0)cnt.textContent='Game 2 · Today';
+else cnt.textContent='Game 2';
 
-// nav active highlight
 const links=[...document.querySelectorAll('nav a')];
 const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
 addEventListener('scroll',()=>{
