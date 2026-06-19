@@ -80,7 +80,7 @@
   .res-line b{color:var(--ink);font-weight:800}
 
   /* ---------- UP NEXT ---------- */
-  .upnext{position:relative;background:var(--ink);color:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--red);padding:22px;overflow:hidden}
+  .upnext{position:relative;background:var(--red);color:#fff;border:3px solid var(--ink);border-radius:9px;box-shadow:6px 6px 0 var(--ink);padding:14px 14px 16px;overflow:hidden}
   .upnext::before{content:"";position:absolute;inset:-30%;
     background:repeating-conic-gradient(from 0deg at 70% 28%, rgba(255,255,255,.06) 0deg 3deg, transparent 3deg 10deg)}
   .un-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
@@ -235,6 +235,15 @@
   .un-seed{font-size:.8rem;padding:1px 8px;border-radius:11px;margin-right:5px}
   .baddies-line{position:relative;z-index:3;display:inline-block;margin:14px 0 4px;font-family:'Bangers',cursive;font-size:clamp(2.1rem,9.2vw,3.7rem);line-height:.95;color:var(--red);-webkit-text-stroke:2px var(--ink);text-shadow:4px 4px 0 var(--ink);transform:rotate(-2.5deg);letter-spacing:.03em}
   .baddies-line::after{content:'';position:absolute;left:-6%;right:-6%;bottom:-7px;height:7px;background:var(--gold);border:2px solid var(--ink);border-radius:3px;transform:rotate(.6deg);z-index:-1}
+  .un-head{position:relative;z-index:2;text-align:center;font-family:'Bangers',cursive;font-size:1.3rem;letter-spacing:.06em;color:var(--gold);-webkit-text-stroke:1px var(--ink);margin:0 0 12px}
+  .un-bug{position:relative;z-index:2;display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .un-team{display:flex;align-items:center;gap:11px;padding:9px 14px;border:2.5px solid var(--ink);border-radius:8px;box-shadow:3px 3px 0 var(--ink)}
+  .un-a{background:var(--gold)}
+  .un-b{background:#fff}
+  .un-name{font-family:'Bangers',cursive;font-size:clamp(1.25rem,5.6vw,1.7rem);letter-spacing:.02em;line-height:1;color:var(--ink);text-transform:uppercase}
+  .un-seedbadge{flex:none;width:27px;height:27px;border-radius:50%;background:var(--ink);color:#fff;font-family:'Chakra Petch';font-weight:700;font-size:.82rem;display:flex;align-items:center;justify-content:center}
+  .un-vschip{position:relative;z-index:3;align-self:center;margin:-9px 0;font-family:'Bangers',cursive;font-size:1.05rem;letter-spacing:.04em;color:#fff;background:var(--ink);border:2.5px solid var(--ink);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;box-shadow:2px 2px 0 var(--ink)}
+  .upnext::after{content:"";position:absolute;inset:0;z-index:1;opacity:.5;background-image:radial-gradient(rgba(0,0,0,.22) 1.3px,transparent 1.4px);background-size:9px 9px;pointer-events:none}
 </style>
 <script>
   if('scrollRestoration' in history){history.scrollRestoration='manual';}
@@ -280,11 +289,12 @@
   <!-- LATEST RESULT + UP NEXT -->
   <section id="next">
     <div class="upnext">
-      <div class="un-top">
-        <span class="un-tag">★ Up Next</span>
-        <span class="un-count" id="count">Championship</span>
+      <div class="un-head">★ Up Next</div>
+      <div class="un-bug">
+        <div class="un-team un-a"><span class="un-seedbadge">1</span><span class="un-name">Tampa Bayshore</span></div>
+        <div class="un-vschip">VS</div>
+        <div class="un-team un-b"><span class="un-seedbadge">2</span><span class="un-name">Keystone</span></div>
       </div>
-      <div class="un-match"><span class="seed un-seed">#1</span> <span class="us">Tampa Bayshore</span><br><span class="un-vs">VS</span><br><span class="seed seed2 un-seed">#2</span> Keystone</div>
     </div>
   </section>
 
@@ -312,7 +322,7 @@
     <span class="brlabel">Championship</span>
     <div class="bgame done"><div class="bg-num">4<small>THU</small></div><div class="bg-body"><div class="bg-when">June 18 <span class="pill pill-final">Final</span></div><div class="bg-teams"><span class="seed seed2">#2</span> Keystone <span class="bg-score">16</span> <span class="vs">v</span> <span class="seed">#1</span> Tampa Bayshore <span class="bg-score lose">1</span></div></div></div>
     <div class="connector"></div>
-    <span class="brlabel">Winner Takes All</span>
+    <span class="brlabel">One More Game</span>
     <div class="bgame title"><div class="bg-num">5<small>FRI</small></div><div class="bg-body"><div class="bg-when">June 19 <span class="pill pill-title">If Game</span></div><div class="bg-teams"><span class="seed">#1</span> <span class="us">Tampa Bayshore</span> <span class="vs">v</span> <span class="seed seed2">#2</span> Keystone</div></div></div>
   </section>
 
@@ -679,15 +689,6 @@ function openP(p){
 document.getElementById('mclose').onclick=()=>modal.classList.remove('on');
 modal.onclick=e=>{if(e.target===modal)modal.classList.remove('on');};
 
-// up next countdown (next game = Game 2, June 16)
-const nextGame=new Date(2026,5,19);
-const today=new Date();today.setHours(0,0,0,0);
-const days=Math.round((nextGame-today)/86400000);
-const cnt=document.getElementById('count');
-if(days>1)cnt.textContent='Title Game · '+days+' days';
-else if(days===1)cnt.textContent='Title Game · Tomorrow';
-else if(days===0)cnt.textContent='Title Game · Today';
-else cnt.textContent='Title Game';
 
 const links=[...document.querySelectorAll('nav a')];
 const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
@@ -698,4 +699,3 @@ addEventListener('scroll',()=>{
 </script>
 </body>
 </html>
-
