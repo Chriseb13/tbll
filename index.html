@@ -235,7 +235,7 @@
   .trophy{position:relative;z-index:3;font-size:3.1rem;line-height:1;margin:6px 0 2px;filter:drop-shadow(3px 4px 0 rgba(20,20,28,.4))}
   .champ-h1{position:relative;z-index:3;font-family:'Bangers',cursive;font-size:clamp(2.4rem,12vw,4.2rem);line-height:.92;letter-spacing:.01em;color:#fff;-webkit-text-stroke:2px var(--ink);text-shadow:4px 4px 0 var(--ink);margin:2px 0}
   .champ-word{color:var(--red);-webkit-text-stroke:2px var(--ink)}
-  .champ-tag{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+  .champ-tag{background:none;border:0;padding:0;box-shadow:none;border-radius:0;color:var(--red);font-size:clamp(1.5rem,7vw,2.6rem);line-height:.95;-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg);letter-spacing:.03em;margin-top:6px}
   .res-badge.final{background:var(--mute)}
   .seed{display:inline-block;font-family:'Chakra Petch';font-weight:700;font-size:.58rem;background:var(--gold);color:var(--ink);border:1.5px solid var(--ink);border-radius:9px;padding:1px 6px;line-height:1.25;text-align:center;margin-right:4px;vertical-align:middle}
   .seed2{background:#c9ced8}
@@ -251,6 +251,10 @@
   .un-seedbadge{flex:none;width:27px;height:27px;border-radius:50%;background:var(--ink);color:#fff;font-family:'Chakra Petch';font-weight:700;font-size:.82rem;display:flex;align-items:center;justify-content:center}
   .un-vschip{position:relative;z-index:3;align-self:center;margin:-9px 0;font-family:'Bangers',cursive;font-size:1.05rem;letter-spacing:.04em;color:#fff;background:var(--ink);border:2.5px solid var(--ink);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;box-shadow:2px 2px 0 var(--ink)}
   .upnext::after{content:"";position:absolute;inset:0;z-index:1;opacity:.5;background-image:radial-gradient(rgba(0,0,0,.22) 1.3px,transparent 1.4px);background-size:9px 9px;pointer-events:none}
+  .un-score{margin-left:auto;font-family:'Bangers',cursive;font-size:1.6rem;color:var(--ink)}
+  .rdr-fig{margin:20px 0;background:var(--paper);border:3px solid var(--ink);border-radius:10px;box-shadow:5px 5px 0 var(--ink);padding:14px}
+  .rdr-fig svg{display:block;width:100%;height:auto}
+  .fig-cap{margin-top:8px;font-family:'Archivo',sans-serif;font-size:.85rem;color:var(--mute);text-align:center}
 </style>
 <script>
   if('scrollRestoration' in history){history.scrollRestoration='manual';}
@@ -278,7 +282,7 @@
     <span class="crest crest-champ">Tampa Bayshore All-Stars</span>
     <div class="trophy">🏆</div>
     <h1 class="champ-h1">District 6<br><span class="champ-word">Champions</span></h1>
-    <div class="tagline champ-tag">2026 · Palma Ceia Field</div>
+    <div class="tagline champ-tag">Baddies of the Bay</div>
   </div>
 </header>
 
@@ -303,11 +307,11 @@
   <!-- STORIES -->
   <section id="next">
     <div class="upnext">
-      <div class="un-head">★ Up Next</div>
+      <div class="un-head">🏆 District 6 Champions</div>
       <div class="un-bug">
-        <div class="un-team un-a"><span class="un-seedbadge">1</span><span class="un-name">Tampa Bayshore</span></div>
-        <div class="un-vschip">VS</div>
-        <div class="un-team un-b"><span class="un-seedbadge">2</span><span class="un-name">Keystone</span></div>
+        <div class="un-team un-a"><span class="un-seedbadge">1</span><span class="un-name">Tampa Bayshore</span><span class="un-score">7</span></div>
+        <div class="un-vschip">W</div>
+        <div class="un-team un-b"><span class="un-seedbadge">2</span><span class="un-name">Keystone</span><span class="un-score">4</span></div>
       </div>
     </div>
   </section>
@@ -329,8 +333,8 @@
     <span class="brlabel">Championship</span>
     <div class="bgame done"><div class="bg-num">4<small>THU</small></div><div class="bg-body"><div class="bg-when">June 18 <span class="pill pill-final">Final</span></div><div class="bg-teams"><span class="seed seed2">#2</span> Keystone <span class="bg-score">16</span> <span class="vs">v</span> <span class="seed">#1</span> Tampa Bayshore <span class="bg-score lose">1</span></div></div></div>
     <div class="connector"></div>
-    <span class="brlabel">One More Game</span>
-    <div class="bgame title"><div class="bg-num">5<small>FRI</small></div><div class="bg-body"><div class="bg-when">June 19 <span class="pill pill-title">If Game</span></div><div class="bg-teams"><span class="seed">#1</span> <span class="us">Tampa Bayshore</span> <span class="vs">v</span> <span class="seed seed2">#2</span> Keystone</div></div></div>
+    <span class="brlabel">Champions</span>
+    <div class="bgame title done"><div class="bg-num">5<small>FRI</small></div><div class="bg-body"><div class="bg-when">June 19 <span class="pill pill-final">Final</span></div><div class="bg-teams"><span class="seed">#1</span> <span class="us">Tampa Bayshore</span> <span class="bg-score">7</span> <span class="vs">v</span> <span class="seed seed2">#2</span> Keystone <span class="bg-score lose">4</span></div></div></div>
   </section>
 
   <!-- SCHEDULE -->
@@ -342,7 +346,7 @@
       <div class="srow us"><span class="s-num">2</span><span class="s-match"><span class="us">Tampa Bayshore</span> 6, Keystone 5 <span class="s-win">W</span></span><span class="s-date">Tue · 6/16</span></div>
       <div class="srow"><span class="s-num">3</span><span class="s-match">Keystone 10, Palma Ceia 0</span><span class="s-date">Wed · 6/17</span></div>
       <div class="srow"><span class="s-num">4</span><span class="s-match">Keystone 16, Tampa Bayshore 1</span><span class="s-date">Thu · 6/18</span></div>
-      <div class="srow"><span class="s-num">5</span><span class="s-match"><span class="us">Tampa Bayshore</span> v Keystone (IF)</span><span class="s-date">Fri · 6/19</span></div>
+      <div class="srow us"><span class="s-num">5</span><span class="s-match"><span class="us">Tampa Bayshore</span> 7, Keystone 4 <span class="s-win">W</span></span><span class="s-date">Fri · 6/19</span></div>
     </div>
   </section>
 
@@ -393,25 +397,67 @@
 
 <script>
 /* ===== WHEN THEY WIN TONIGHT: change false to true, save, push. ===== */
-const CHAMPS = false;
+const CHAMPS = true;
 if(CHAMPS) document.body.classList.add("champs");
 const ROSTER=[
-  {n:"5",name:"Brooklyn Barnwell",pos:"2B",bat:{ab:7,r:1,h:2,rbi:3,bb:0,so:1},notes:["Walk-Off Single vs Keystone","3 RBI in the Tournament"]},
-  {n:"4",name:"Audrey Girsch",pos:"RF",bat:{ab:6,r:1,h:1,rbi:0,bb:0,so:4},notes:["Diving Catch in Right"]},
-  {n:"16",name:"Charley Seckinger",pos:"C",bat:{ab:7,r:3,h:4,rbi:0,bb:0,so:0},notes:["Called a Gem Behind the Plate","4 Hits in the Tournament"]},
-  {n:"33",name:"Briley Bishop",pos:"SS",bat:{ab:6,r:1,h:1,rbi:3,bb:1,so:0},notes:["3 RBI in the Tournament"]},
-  {n:"15",name:"Charlotte Barber",pos:"1B",bat:{ab:2,r:1,h:0,rbi:0,bb:4,so:1},notes:["4 Walks in the Tournament","Great Eye"]},
-  {n:"24",name:"Cora Zichmiller",pos:"P",bat:{ab:4,r:3,h:1,rbi:0,bb:3,so:2},pitch:{ip:"3.2",h:4,r:8,er:4,bb:6,so:0},notes:["Started Game 1 in the Circle","Scored the Winning Run"]},
-  {n:"10",name:"Eliza Oh",pos:"P",bat:{ab:5,r:2,h:3,rbi:1,bb:0,so:0},pitch:{ip:"11.2",h:19,r:19,er:12,bb:10,so:9},notes:["Walk-Off Win in the Circle","11.2 IP, 9 K","Walk-Off RBI Single"]},
-  {n:"19",name:"Emma Ritchie",pos:"LF",bat:{ab:6,r:0,h:1,rbi:0,bb:0,so:0},notes:["Bunt Pressure"]},
-  {n:"6",name:"Haven Dalrymple",pos:""},
-  {n:"3",name:"Liv Walker",pos:"3B",bat:{ab:7,r:0,h:2,rbi:1,bb:0,so:1},notes:["Game-Saving Double Play","RBI Single"]},
-  {n:"14",name:"Maisy Brewer",pos:"LF",bat:{ab:6,r:1,h:1,rbi:1,bb:0,so:1},notes:["Hit Barrels All Night","Stolen Bases"]},
-  {n:"9",name:"Olivia Moon",pos:"CF",bat:{ab:5,r:1,h:1,rbi:0,bb:1,so:0},notes:["The Catch vs Palma Ceia","Outfield Assist in Center"]},
+  {n:"5",name:"Brooklyn Barnwell",pos:"2B",bat:{ab:9,r:2,h:4,rbi:3,bb:0,so:1},notes:["Walk-Off Single vs Keystone","3 RBI in the Tournament"]},
+  {n:"4",name:"Audrey Girsch",pos:"RF",bat:{ab:8,r:2,h:1,rbi:1,bb:0,so:4},notes:["Diving Catch in Right"]},
+  {n:"16",name:"Charley Seckinger",pos:"C",bat:{ab:9,r:4,h:5,rbi:3,bb:0,so:0},notes:["Called a Gem Behind the Plate","5 Hits in the Tournament"]},
+  {n:"33",name:"Briley Bishop",pos:"SS",bat:{ab:8,r:1,h:3,rbi:3,bb:2,so:0},notes:["3 RBI in the Tournament"]},
+  {n:"15",name:"Charlotte Barber",pos:"1B",bat:{ab:3,r:1,h:0,rbi:0,bb:5,so:2},notes:["5 Walks in the Tournament","Great Eye"]},
+  {n:"24",name:"Cora Zichmiller",pos:"P",bat:{ab:7,r:3,h:2,rbi:1,bb:3,so:3},pitch:{ip:"9.0",h:10,r:12,er:6,bb:11,so:0},notes:["Started Game 1 in the Circle","Scored the Winning Run"]},
+  {n:"10",name:"Eliza Oh",pos:"P",bat:{ab:6,r:3,h:3,rbi:2,bb:1,so:0},pitch:{ip:"12.1",h:19,r:19,er:12,bb:11,so:9},notes:["Walk-Off Win in the Circle","12.1 IP, 9 K","Walk-Off RBI Single"]},
+  {n:"19",name:"Emma Ritchie",pos:"LF",bat:{ab:7,r:1,h:1,rbi:0,bb:1,so:0},notes:["Bunt Pressure"]},
+  {n:"6",name:"Haven Dalrymple",pos:"C",bat:{ab:2,r:1,h:0,rbi:0,bb:0,so:0},notes:["Masterpiece Behind the Plate","Zero Passed Balls"]},
+  {n:"3",name:"Liv Walker",pos:"3B",bat:{ab:10,r:0,h:3,rbi:1,bb:0,so:1},notes:["Game-Saving Double Play","RBI Single"]},
+  {n:"14",name:"Maisy Brewer",pos:"LF",bat:{ab:8,r:1,h:1,rbi:2,bb:0,so:2},notes:["Hit Barrels All Night","Stolen Bases"]},
+  {n:"9",name:"Olivia Moon",pos:"CF",bat:{ab:6,r:2,h:1,rbi:0,bb:2,so:0},notes:["The Catch vs Palma Ceia","Outfield Assist in Center"]},
 ];
 
 // ---------- STORIES ----------
 const STORIES=[
+  {
+    k:"k1", kick:"Championship Game 2 · June 19",
+    head:"Don't Call It a Comeback 🏆",
+    dek:"How Tampa Bayshore answered a 16 to 1 loss with a seven-run fifth and took the District 6 title from a stacked Keystone team.",
+    byline:"Dugout Beat",
+    body:[
+      "Let us unpack this one. Start with a nod to our skipper, Doug Barber, who walked in with the toughest call of the tournament: which of his two aces gets the ball. A proven Eliza Oh, who went the distance in the big Game 2 comeback against Keystone. Or Cora Zichmiller, the cold-blooded assassin who had not yet drawn a start against Keystone but looked great in the opener against Palma Ceia. He went with Cora and kept Showtime Eliza loaded in the bullpen. The call worked.",
+      "And it needed to, because let us say it out loud: that Keystone team and lineup is stacked. You could line them up next to Murderers’ Row or the modern Dodgers and not feel silly doing it. They are that good.",
+      "Cora did not blink. She was a smooth criminal on the mound all night, and she would appreciate the reference, because she loves MJ. Quick, calm, and in total control of the moment.",
+      "Let us pause on that word, control, and go a little deep. There is a thing called the Yerkes-Dodson law, the inverted U of arousal. Too little pressure and you go flat. Too much and you get rattled. Right in the middle is the sweet spot, where focus and energy meet and the game slows down. That is exactly where Cora lived all night.",
+      {svg:"<svg viewBox='0 0 420 280' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Yerkes-Dodson inverted U with Cora at the peak'><rect x='171' y='30' width='100' height='180' fill='#ffce2e' opacity='0.22'/><line x1='50' y1='210' x2='398' y2='210' stroke='#14141c' stroke-width='4'/><line x1='50' y1='28' x2='50' y2='210' stroke='#14141c' stroke-width='4'/><path d='M60 200 Q220 -90 385 200' fill='none' stroke='#e2382f' stroke-width='7' stroke-linecap='round'/><circle cx='221' cy='55' r='10' fill='#ffce2e' stroke='#14141c' stroke-width='3'/><text x='221' y='40' text-anchor='middle' font-family='Bangers, cursive' font-size='22' fill='#14141c'>CORA</text><text x='224' y='247' text-anchor='middle' font-family='Bangers, cursive' font-size='17' fill='#14141c'>PRESSURE / AROUSAL</text><text x='27' y='120' text-anchor='middle' font-family='Bangers, cursive' font-size='17' fill='#14141c' transform='rotate(-90 27 120)'>PERFORMANCE</text><text x='66' y='228' font-family='Archivo, sans-serif' font-size='12' fill='#5e6275'>too calm</text><text x='330' y='228' font-family='Archivo, sans-serif' font-size='12' fill='#5e6275'>too rattled</text><text x='221' y='204' text-anchor='middle' font-family='Archivo, sans-serif' font-weight='700' font-size='11' fill='#14141c'>SWEET SPOT</text></svg><div class='fig-cap'>Yerkes-Dodson, the inverted U. Cora pitched right at the top of it.</div>"},
+      "The very first batter smoked one to left and looked ready to pick up right where Keystone left off the night before, when they routed us. Cora stayed calm and kept pitching to contact. Good thing, because her defense was ready to back her up.",
+      "The battery this game was Cora and Haven Dalrymple, catching for the first time all tournament. Haven brought an unbelievable jolt of energy and freshness, with zero residue from the night before. You could feel it. And she called a masterpiece. Did anyone notice that not a single ball got past her? Zero. Not one.",
+      "The defense was everywhere. Maisy Brewer and Olivia Moon both hustled balls back in to hold what looked like extra bases to singles. Moon ran down a moonshot. So did Audrey Girsch, who tracked hers after a rough trip in a typical little league hole in the field. Briley Bishop played a clean third. Liv Walker was gold glove at first. The middle of the field stayed solid and made every routine play look routine.",
+      "Now let us talk about those inches again. Tony D'Amato said it best: the inches we need are all around us. In the first, Briley battled a nice liner up the middle, the way she does. Then Liv Walker, who is red hot right now, ripped one to left, where an excellent fielder happened to be standing and made a perfect throw to get her by, you guessed it, an inch. Keystone answered the bell. You could tell this was going to be an old fashioned slobber knocker.",
+      "Cora kept dealing. In, out, up, down, hard then soft. Quick work in the second.",
+      "Tampa Bayshore put a runner on in the second, but the line-out double play struck again and cut the rally short. That is a drill for practice this week, because both teams forgot the freeze-on-a-liner rule at least once.",
+      "The third opened with a leadoff walk, and before Cora could close the door Keystone pushed one across to lead 1 to 0. The damage stayed small.",
+      "Charlotte Barber found her way on again, the way she always seems to. Her on-base percentage in this tournament sits around .625, built on a pile of walks and a knack for reaching. Keystone neutralized the threat and held the lead, but Charlotte kept doing her job: get on, make them work.",
+      "The fourth got tense. With one out, Keystone drew a walk, and the next two grounders to Charley Seckinger at short had eyes. On a field baking in the dry Tampa heat, the ball was jumping all over the place. Charley fought them and kept everything in play, but the baddies were suddenly in a hole: bases loaded, one out, against a nightmare lineup.",
+      "But softball has a sense of humor, and I think it is always watching to see if its students learned anything. So the next ball is a line drive right at Charley, who doubles the runner off and kills the rally where it stood. The slobber knocker rolled on.",
+      "Tampa Bayshore answered with a threat of its own. Charley wore a pitch, took her base, and was standing on third moments later after Briley ripped one down the left field line. That set up the sizzling Liv Walker and power that is unmatched on this field. But this is not your grandfather’s little league. Seconds before the pitch, the Keystone coach called out no doubles and waved the outfield back. Liv leaned into one to left, and a day earlier that ball is over the fence. Not today. The Keystone left fielder was perfectly positioned on the warning track and caught the bomb like a can of corn off the top shelf. Threat neutralized.",
+      "The next half inning happened fast. A hot shot to right took a rough hop off the patchy grass and got past Emma Ritchie, one of our best defenders, and then came another laser from that Keystone left fielder, who is as good a hitter as you will find at this age. Just like that, 3 to 0.",
+      "So now it is the bottom of the fifth, the day after Tampa Bayshore got tenderized 16 to 1. This is the part where the sails drop, the shoulders slump, the gear gets slammed against the fence, and the tears start. Right? Well, if you believe that, you have not been paying attention. Remember head up, shoulders back? That phrase did not come from a coach. That was the girls, saying it to each other on the line during the national anthem, chins lifted and shoulders squared, standing like a team that already knew exactly who it was. So the heads did not drop. Not one of them. Because what happened next is the stuff of legend.",
+      "Brooklyn Barnwell stepped in and bang, she was on first. There is a run if we can bring her around. Moon worked a walk. There is the second run. Emma Ritchie battled with two strikes and drew another walk. There is the tying run aboard. We were not out of anything.",
+      "A lot happened in that inning. Pitching changes, coaches meetings, umpire meetings. One thing never changed: the comeback kids were present. Every player living in the moment, sitting right in the center of that inverted U, in a flow state, and we got to watch it unfold like magic.",
+      "If you have been following along, you know Maisy was due. Surely the softball gods would hand her a gap shot for all the AtomBalls. They did not. They gave her something better: a grounder to second that moved the tying run up and pushed across our first run of the game. They call that small ball, and sometimes that is exactly how the tide turns.",
+      "With a base open, Charlotte Barber somehow drew another walk with two strikes. Keystone changed pitchers. You could feel the wind filling our sails and the wake building behind us. Audrey Girsch stepped in and did exactly what we needed, put the ball in play and beat out a fielder's choice to score Moon. 3 to 2. Close.",
+      "Then Eliza Oh won what can only be called a battle in the box. She and the pitcher went blow for blow. Eliza let the ball get deep and fouled off anything close until she finally won the at-bat with a walk that tied the game at 3. The glorious reset. The comeback kids were not done.",
+      "Haven came up swinging hard and hit what looked like a seeing-eye dribbler past the circle, but the pitcher made a terrific play to force a runner at home. Two outs, bottom of the fifth, bases loaded.",
+      "It felt like the story was built to carry to the last inning. Bases loaded, two outs, a tie game, the whole comeback balanced on a single swing. But trouble was strutting to the plate, and like her walk-up song says, she was feeling good. Charley Seckinger did not take long. She ripped a single up the middle to blow the roof off the place and hand the baddies a 6 to 3 lead. The energy was electric. As Charley dusted herself off and celebrated, you could feel exactly how much this little group believes in themselves and in each other.",
+      "And for good measure, because she is in fact Bad, Cora laced a line drive up the middle that looked like the five iron Coach Girsch wishes he could hit. A seven-run fifth, against a seasoned Keystone team that happens to be last year’s state champs.",
+      {pull:"A seven-run fifth. The day after 16 to 1."},
+      "Practically speaking, the game was over. But Keystone has poise and a desire to win. Bang, a leadoff single in the sixth. No problem for Cora, who put the next pitch exactly where she wanted it for an out. The heat was real, though, and Cora had thrown 78 pitches under the sun against a tough lineup. When the next batter walked on four pitches, you could see it was time. Skipper Doug Barber and Coach Whitney Brewer had co-ace Eliza warm and ready.",
+      "Eliza came on with runners on first and second and the lead suddenly feeling thin. The first batter she saw walked on four pitches, and just like that Keystone had the tying run at the plate and the whole place holding its breath.",
+      "Here is what people may not know about Eliza: she is incredibly accurate, and that changes everything. If you know baseball, think Mariano Rivera and that cutter that moved ever so slightly, late, and hard. When Eliza wants the inside corner, she takes it from the hitter. Period. The Keystone batters were still looking for the changeup that haunted them in the first meeting, and they missed that her real weapon is precision. The changeup was a pawn. They took it. Eliza got a weak grounder that Briley scooped and threw like a dart, and a jammed pop to Liv at first, both on hard fastballs in on the hands. Precision.",
+      {pull:"In the words of Howard Cosell: “Down goes Frazier. Down goes Frazier.”"},
+      "All week I heard the same thing. Oh man, you have Keystone, that is a travel team, those are the Vipers, they are good, are you ready. And you know what? They were right. That team is good. No, they are exceptional. Their coaches coach the right way, those kids put in the work, and it is admirable.",
+      "But a game decided by inches can be won by anyone who locks into the task in front of them. No one is unbeatable, us included, and Keystone showed us that plainly. The difference is that we get a choice on every pitch, in every moment, about what we do next. Will we chase that inch back even when it costs us something, even when it risks looking foolish? This team will. Audrey Girsch was the proof. She had a read on a ball, reached for it, and tripped. Softball, always testing, sent her another the very next play. She did not pull up or play it safe. She went all the way to the ground after it and made a remarkable catch.",
+      "Every one of these players had a moment in this tournament, and the book is not closed yet. So do not call it a comeback, and do not call them a Cinderella story. Cinderella needed midnight and a little magic. These girls just kept choosing the next inch, together, until the inches added up to a championship. Call them the comeback kids if you like. Just know they did not come back from anywhere. They were here the whole time. District 6 champions. 🏆"
+    ]
+  },
   {
     k:"k1", kick:"Championship Game 1 · June 18",
     head:"Head Up, Shoulders Back 🔥",
@@ -659,6 +705,7 @@ function openStory(i){
   s.body.forEach(p=>{
     if(typeof p==='string'){const el=document.createElement('p');el.textContent=p;body.appendChild(el);}
     else if(p.hype){const el=document.createElement('div');el.className='rdr-hype';el.innerHTML='<div class="big">\u2605 '+p.hype+' \u2605</div>'+(p.sub?'<div class="sub">'+p.sub+'</div>':'');body.appendChild(el);}
+    else if(p.svg){const el=document.createElement('div');el.className='rdr-fig';el.innerHTML=p.svg;body.appendChild(el);}
     else{const el=document.createElement('div');el.className='pull';el.textContent=p.pull;body.appendChild(el);}
   });
   reader.classList.add('on');reader.scrollTop=0;
