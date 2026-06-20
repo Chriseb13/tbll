@@ -244,7 +244,7 @@
   .baddies-line::after{content:'';position:absolute;left:-6%;right:-6%;bottom:-7px;height:7px;background:var(--gold);border:2px solid var(--ink);border-radius:3px;transform:rotate(.6deg);z-index:-1}
   .un-head{position:relative;z-index:2;text-align:center;font-family:'Bangers',cursive;font-size:1.3rem;letter-spacing:.06em;color:var(--gold);-webkit-text-stroke:1px var(--ink);margin:0 0 12px}
   .un-bug{position:relative;z-index:2;display:flex;flex-direction:column;align-items:stretch;gap:0}
-  .un-team{display:flex;align-items:center;gap:11px;padding:9px 14px;border:2.5px solid var(--ink);border-radius:8px;box-shadow:3px 3px 0 var(--ink)}
+  .un-team{display:flex;align-items:center;justify-content:center;gap:11px;padding:9px 14px;border:2.5px solid var(--ink);border-radius:8px;box-shadow:3px 3px 0 var(--ink)}
   .un-a{background:var(--gold)}
   .un-b{background:#fff}
   .un-name{font-family:'Bangers',cursive;font-size:clamp(1.25rem,5.6vw,1.7rem);letter-spacing:.02em;line-height:1;color:var(--ink);text-transform:uppercase}
@@ -255,6 +255,11 @@
   .rdr-fig{margin:20px 0;background:var(--paper);border:3px solid var(--ink);border-radius:10px;box-shadow:5px 5px 0 var(--ink);padding:14px}
   .rdr-fig svg{display:block;width:100%;height:auto}
   .fig-cap{margin-top:8px;font-family:'Archivo',sans-serif;font-size:.85rem;color:var(--mute);text-align:center}
+  .un-sub{position:relative;z-index:2;text-align:center;font-family:'Bangers',cursive;font-size:1rem;letter-spacing:.04em;color:#fff;margin:-6px 0 11px}
+  .un-games{position:relative;z-index:2;margin-top:12px;display:flex;flex-direction:column;gap:6px}
+  .un-g{display:flex;gap:9px;align-items:baseline;background:rgba(20,20,28,.24);border:2px solid var(--ink);border-radius:6px;padding:7px 11px;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:.86rem;color:#fff}
+  .un-g b{color:var(--gold)}
+  .un-foot{position:relative;z-index:2;text-align:center;margin-top:10px;font-family:'Archivo',sans-serif;font-size:.74rem;color:rgba(255,255,255,.85)}
 </style>
 <script>
   if('scrollRestoration' in history){history.scrollRestoration='manual';}
@@ -307,12 +312,19 @@
   <!-- STORIES -->
   <section id="next">
     <div class="upnext">
-      <div class="un-head">🏆 District 6 Champions</div>
+      <div class="un-head">★ Up Next</div>
+      <div class="un-sub">Section 7 Sectionals · Best 2 of 3</div>
       <div class="un-bug">
-        <div class="un-team un-a"><span class="un-seedbadge">1</span><span class="un-name">Tampa Bayshore</span><span class="un-score">7</span></div>
-        <div class="un-vschip">W</div>
-        <div class="un-team un-b"><span class="un-seedbadge">2</span><span class="un-name">Keystone</span><span class="un-score">4</span></div>
+        <div class="un-team un-a"><span class="un-name">Tampa Bayshore</span></div>
+        <div class="un-vschip">VS</div>
+        <div class="un-team un-b"><span class="un-name">District 12</span></div>
       </div>
+      <div class="un-games">
+        <div class="un-g"><b>G1</b><span>Sat 6/27 · 10:00 AM</span></div>
+        <div class="un-g"><b>G2</b><span>Sat 6/27 · 1:00 PM</span></div>
+        <div class="un-g"><b>G3</b><span>Sun 6/28 · 10:00 AM · if needed</span></div>
+      </div>
+      <div class="un-foot">South Sumter LL, Field 4 · home team by coin toss</div>
     </div>
   </section>
 
@@ -335,6 +347,9 @@
     <div class="connector"></div>
     <span class="brlabel">Champions</span>
     <div class="bgame title done"><div class="bg-num">5<small>FRI</small></div><div class="bg-body"><div class="bg-when">June 19 <span class="pill pill-final">Final</span></div><div class="bg-teams"><span class="seed">#1</span> <span class="us">Tampa Bayshore</span> <span class="bg-score">7</span> <span class="vs">v</span> <span class="seed seed2">#2</span> Keystone <span class="bg-score lose">4</span></div></div></div>
+    <div class="connector"></div>
+    <span class="brlabel">Section 7 Sectionals</span>
+    <div class="bgame title"><div class="bg-num">★<small>NEXT</small></div><div class="bg-body"><div class="bg-when">June 27-28 <span class="pill pill-title">Best 2 of 3</span></div><div class="bg-teams"><span class="us">Tampa Bayshore</span> <span class="vs">v</span> District 12</div></div></div>
   </section>
 
   <!-- SCHEDULE -->
