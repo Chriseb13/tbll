@@ -235,9 +235,9 @@
   .champs .hero-champ{display:block}
   .crest-champ{background:var(--ink);color:var(--gold)}
   .trophy{position:relative;z-index:3;font-size:3.1rem;line-height:1;margin:6px 0 2px;filter:drop-shadow(3px 4px 0 rgba(20,20,28,.4))}
-  .champ-h1{position:relative;z-index:3;font-family:'Bangers',cursive;font-size:clamp(2.4rem,12vw,4.2rem);line-height:.92;letter-spacing:.01em;color:#fff;-webkit-text-stroke:2px var(--ink);text-shadow:4px 4px 0 var(--ink);margin:2px 0}
+  .champ-h1{position:relative;z-index:3;font-family:'Bangers',cursive;font-size:clamp(2.7rem,13vw,4.9rem);line-height:.92;letter-spacing:.01em;color:#fff;-webkit-text-stroke:2px var(--ink);text-shadow:4px 4px 0 var(--ink);margin:2px 0}
   .champ-word{color:var(--red);-webkit-text-stroke:2px var(--ink)}
-  .champ-tag{background:none;border:0;padding:0;box-shadow:none;border-radius:0;color:var(--red);font-size:clamp(1.5rem,7vw,2.6rem);line-height:.95;-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg);letter-spacing:.03em;margin-top:6px}
+  .champ-tag{background:none;border:0;padding:0;box-shadow:none;border-radius:0;color:#fff;font-size:clamp(1.55rem,7.2vw,2.7rem);line-height:.95;-webkit-text-stroke:0.7px var(--ink);text-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg);letter-spacing:.03em;margin-top:6px}
   .res-badge.final{background:var(--mute)}
   .seed{display:inline-block;font-family:'Chakra Petch';font-weight:700;font-size:.58rem;background:var(--gold);color:var(--ink);border:1.5px solid var(--ink);border-radius:9px;padding:1px 6px;line-height:1.25;text-align:center;margin-right:4px;vertical-align:middle}
   .seed2{background:#c9ced8}
@@ -282,6 +282,22 @@
   .listen-bar{height:8px;background:rgba(255,255,255,.18);border-radius:5px;margin-top:8px;overflow:hidden;cursor:pointer}
   .listen-fill{height:100%;width:0;background:var(--gold);border-radius:5px}
   .listen-sub{font-family:'Chakra Petch',monospace;font-size:.72rem;color:#cfd2da;margin-top:6px}
+  #watch{margin-top:6px}
+  .vidgrid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:600px){.vidgrid{grid-template-columns:1fr 1fr}}
+  .vid{position:relative;aspect-ratio:16/9;background:var(--ink);border:3px solid var(--ink);border-radius:10px;box-shadow:6px 6px 0 var(--red);overflow:hidden}
+  .vid::before{content:"";position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(125deg,rgba(255,255,255,.05) 0 2px,transparent 2px 11px)}
+  .vid-el{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;opacity:0;transition:opacity .2s;z-index:0}
+  .vid.playing .vid-el{opacity:1;z-index:2}
+  .vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;width:62px;height:62px;border-radius:50%;background:var(--gold);border:3px solid #fff;box-shadow:0 0 0 3px var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+  .vid-play:active{transform:translate(-50%,-50%) scale(.93)}
+  .vid.playing .vid-play{display:none}
+  .vid-label{position:absolute;left:0;bottom:0;z-index:1;padding:12px;width:100%;background:linear-gradient(to top,rgba(20,20,28,.88),transparent);display:flex;flex-direction:column;gap:2px;pointer-events:none}
+  .vid-label b{font-family:'Bangers',cursive;font-size:1.3rem;letter-spacing:.03em;color:var(--gold);line-height:1}
+  .vid-label span{font-family:'Chakra Petch',monospace;font-size:.66rem;color:#e3e6ee}
+  .vid.playing .vid-label{display:none}
+  .vid-msg{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;font-family:'Chakra Petch',monospace;font-size:.7rem;color:var(--gold);background:rgba(20,20,28,.78);padding:3px 11px;border-radius:6px;display:none}
+  .vid.error .vid-msg{display:block}
 </style>
 <script>
   if('scrollRestoration' in history){history.scrollRestoration='manual';}
@@ -326,7 +342,6 @@
   </svg>
   <div class="hero-in">
     <span class="crest crest-champ">Tampa Bayshore All-Stars</span>
-    <div class="trophy">🏆</div>
     <h1 class="champ-h1">Headed to<br><span class="champ-word">State</span></h1>
     <div class="tagline champ-tag">Baddies of the Bay</div>
   </div>
@@ -334,6 +349,7 @@
 
 <nav id="nav">
   <a href="#stories">Story</a>
+  <a href="#watch">Watch</a>
   <a href="#bracket">Bracket</a>
   <a href="#schedule">Schedule</a>
   <a href="#players">Players</a>
@@ -350,6 +366,26 @@
   </section>
 
   <!-- STORIES -->
+  <!-- HIGHLIGHTS -->
+  <section id="watch">
+    <span class="seclabel">Roll the Tape</span>
+    <div class="sechead r">Highlights</div>
+    <div class="vidgrid">
+      <div class="vid">
+        <video class="vid-el" preload="none" playsinline><source src="Brooklyn%20walk%20off.mp4" type="video/mp4"></video>
+        <button class="vid-play" aria-label="Play video"><svg viewBox="0 0 24 24" width="30" height="30"><polygon points="7,5 20,12 7,19" fill="#14141c"/></svg></button>
+        <div class="vid-label"><b>Brooklyn's Walk-Off</b><span>Game 2 · 6th Inning</span></div>
+        <div class="vid-msg">Footage coming soon</div>
+      </div>
+      <div class="vid">
+        <video class="vid-el" preload="none" playsinline><source src="moons-catch.mp4" type="video/mp4"></video>
+        <button class="vid-play" aria-label="Play video"><svg viewBox="0 0 24 24" width="30" height="30"><polygon points="7,5 20,12 7,19" fill="#14141c"/></svg></button>
+        <div class="vid-label"><b>Moon's Big Catch</b><span>The Grab</span></div>
+        <div class="vid-msg">Footage coming soon</div>
+      </div>
+    </div>
+  </section>
+
   <!-- BRACKET -->
   <section id="bracket">
     <span class="seclabel">The Road</span>
@@ -414,7 +450,7 @@
         <div class="listen-bar" id="lbar"><div class="listen-fill" id="lfill"></div></div>
         <div class="listen-sub" id="lsub">Tap play to listen</div>
       </div>
-      <audio id="laud" src="baddies.m4a" preload="none"></audio>
+      <audio id="laud" src="baddies.m4a?v=1" preload="metadata"></audio>
     </div>
   </section>
     <div class="bonuslist" id="bonuslist"></div>
@@ -822,15 +858,27 @@ addEventListener('scroll',()=>{
   function fmt(t){t=Math.max(0,t|0);var m=(t/60)|0,sec=t%60;return m+':'+(sec<10?'0':'')+sec;}
   function show(p){ip.style.display=p?'none':'';iq.style.display=p?'':'none';}
   b.addEventListener('click',function(){
-    if(a.paused){a.play().then(function(){show(true);}).catch(function(){s.textContent='Audio not found yet';});}
+    if(a.paused){s.textContent='Loading\u2026';var p=a.play();if(p&&p.catch){p.catch(function(){s.textContent='Tap again to play';});}}
     else{a.pause();show(false);}
   });
+  a.addEventListener('playing',function(){show(true);});
   a.addEventListener('timeupdate',function(){if(a.duration){f.style.width=(a.currentTime/a.duration*100)+'%';s.textContent=fmt(a.currentTime)+' / '+fmt(a.duration);}});
   a.addEventListener('loadedmetadata',function(){s.textContent='0:00 / '+fmt(a.duration);});
   a.addEventListener('ended',function(){show(false);f.style.width='0%';s.textContent='Tap play to listen';});
   a.addEventListener('error',function(){s.textContent='Audio not found yet';});
   bar.addEventListener('click',function(e){if(a.duration){var r=bar.getBoundingClientRect();a.currentTime=(e.clientX-r.left)/r.width*a.duration;}});
 })();
+</script>
+<script>
+document.querySelectorAll('.vid').forEach(function(v){
+  var el=v.querySelector('.vid-el'),btn=v.querySelector('.vid-play');
+  btn.addEventListener('click',function(){
+    var p=el.play();
+    if(p&&p.then){p.then(function(){v.classList.add('playing');el.controls=true;}).catch(function(){v.classList.add('error');});}
+  });
+  el.addEventListener('error',function(){v.classList.add('error');});
+  el.addEventListener('ended',function(){v.classList.remove('playing');el.controls=false;});
+});
 </script>
 </body>
 </html>
