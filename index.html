@@ -203,8 +203,10 @@
   .rdr-byline{position:relative;z-index:2;font-family:'Chakra Petch';font-weight:700;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-top:10px}
   .rdr-body{padding:24px}
   .rdr-body p{font-size:1rem;line-height:1.62;margin-bottom:16px;color:#23252f}
+  .rdr-body p strong{font-weight:800;color:var(--ink)}
   .rdr-body p:first-child::first-letter{font-family:'Bangers',cursive;font-size:3.2rem;float:left;line-height:.8;margin:4px 10px 0 0;color:var(--red);-webkit-text-stroke:1px var(--ink)}
   .rdr-body .pull{font-family:'Bangers',cursive;font-size:1.5rem;line-height:1.1;color:var(--blue);border-left:5px solid var(--gold);padding:6px 0 6px 16px;margin:6px 0 18px;text-transform:uppercase;-webkit-text-stroke:.3px var(--ink)}
+  .rdr-body .rdr-shead{font-family:'Bangers',cursive;font-size:1.7rem;line-height:1;color:var(--red);text-transform:uppercase;margin:26px 0 14px;-webkit-text-stroke:.6px var(--ink);border-bottom:4px solid var(--gold);padding-bottom:6px}
   .rdr-close{position:absolute;top:12px;right:16px;z-index:3;font-family:'Bangers',cursive;font-size:1.7rem;color:#fff;cursor:pointer;-webkit-text-stroke:1px var(--ink)}
   .rdr-back{display:block;width:100%;font-family:'Bangers',cursive;font-size:1.2rem;letter-spacing:.04em;color:#fff;background:var(--ink);border:none;padding:14px;cursor:pointer;border-top:4px solid var(--gold)}
 
@@ -414,7 +416,7 @@
       <div class="vid has-poster poster-eliza">
         <video class="vid-el" preload="none" playsinline><source src="eliza-oh-story.mp4" type="video/mp4"></video>
         <button class="vid-play" aria-label="Play video"><svg viewBox="0 0 24 24" width="30" height="30"><polygon points="7,5 20,12 7,19" fill="#14141c"/></svg></button>
-        <div class="vid-label"><b>The Inch in the Fabric</b><span>Eliza's Run · Game 2</span></div>
+        <div class="vid-label"><b>You See the Ocean</b><span>Eliza's Run · Game 2</span></div>
         <div class="vid-msg">Footage coming soon</div>
       </div>
     </div>
@@ -554,28 +556,41 @@ const BURST="M100.0,1.0 L118.4,31.4 L149.5,14.3 L150.2,49.8 L185.7,50.5 L168.6,8
 const STORIES=[
   {
     k:"k1", kick:"Featured · Game 2 vs Keystone",
-    head:"The Inch in the Fabric",
-    dek:"A walk-off looks like one swing. Slow it down and you find an inning stitched together, ninety feet and one inch at a time.",
-    byline:"The Coaches",
+    head:"You See the Ocean",
+    dek:"I see the waves, the current, the ripples, the tide.",
+    byline:"Tampa Bayshore All-Stars",
     body:[
-      "I was listening to a podcast a few weeks back. It sent me to an article, and that article would not leave me alone. I am going to give it its own post soon, because it deserves the room. But here is what it left me chewing on: most of what wins a game never shows up in the box score.",
-      "So I went back and watched one inning again. Not the swing everyone remembers. The threads that set it up.",
-      "Down 5 to 2 in the bottom of the sixth. Three outs from going home. What happened next was not one big moment. It was a seam, stitched one piece at a time.",
-      "Charlotte Barber started it the hard way, with a walk. Four pitches she did not chase. That is its own kind of patience, and it put the first thread in the fabric.",
-      "Audrey Girsch followed with a single, a clean piece of hitting that moved the line and kept the inning breathing.",
-      "Then Eliza Oh punched a single to load the bases. Watch what she does after the ball leaves her bat, because that is the part worth slowing down for.",
-      {pull:"The box score says single. The inning says everything after it."},
-      "A pop-up came next, the kind that can end a rally if a runner drifts too far. Eliza did not drift. She read it, held, and never gave the defense a free out.",
-      "She kept a smart, aggressive secondary lead, enough to draw a pickoff throw. Most kids tuck back in and wait. She kept the pressure on.",
-      "Then Cora Zichmiller laced one through the gap. Eliza was already reading it, already moving, and took second without a thought.",
-      "The last thread was the closest. A chopper off the bat of Liv Walker, and the play was at third. Give Keystone credit, their third baseman played it exactly right. But Eliza ran like the inch belonged to her, and she beat the force by exactly that. One inch.",
-      {img:CHAMPSPHOTO, cap:"District 6 Champions. The banner is the part everyone sees. The inning that built toward nights like this is the part worth slowing down for."},
+      "That line is not mine. I stumbled onto it in an article, and it lit up things I thought I already understood. My life. My work. And yes, even what I do out here as a coach.",
+      "So let me start with a small idea and one big inning.",
+      "A championship does not arrive in a single moment. It rolls in like a tide. Wave by wave, at-bat by at-bat, inch by inch. Spend enough years inside a game and your eyes drift off the ball and onto the water around it, the small currents and ripples nobody is watching. That is where this one was won.",
+      "And then there is the thing no scouting report prepares you for.",
+      "I am also a dad. The girl who ended that night with a two-out single is mine. I have watched it more times than I will admit, and every single time it reaches a place thirty years of my own at-bats never did.",
+      "I did the same thing this spring when my son's eight-year-old team won their tournament. I played the last out over and over. Not to watch my son make the play. To watch his little legs churning a thousand miles an hour as he sprinted to pile on with his team.",
+      "Any parent in those stands knows exactly what I mean. Nothing you do for yourself comes within a mile of watching your kid, and their teammates, build something together.",
+      "But here is the part that would not let go. I could not actually tell you how we got there. I watched the ending on a loop and still could not explain the middle. So I did what you do. I went back and looked.",
+      "The whole night already lives in \"The Walk-Off Kids Do It Again.\" This is the current that recap moves past in a single sentence. It deserves a lot more than a sentence.",
+      "The moment I stopped watching the last swing and started watching the at-bats before it, the whole ocean opened up.",
+      "## The Sequence",
+      "Down 5 to 2 in the bottom of the sixth. Three outs from the season being over.",
+      "It did not start with a hero. It started with two kids who refused to give an inch.",
+      "**Charlotte Barber** worked a walk. The least celebrated at-bat in the sport, and the rally does not exist without it.",
+      "**Audrey Girsch** followed with a single. Two on. Now Keystone has to think.",
+      "Then **Eliza Oh** punched a single up the middle and loaded the bases.",
+      "That was Eliza's last swing of the night. Everything she did from here, she did with her eyes and her feet. So watch them.",
+      "**The pop-up.** A ball went up over the second baseman. This is the exact play that kept ending rallies all tournament, for both teams. A runner drifts a step too far, the ball is caught, the throw beats her back, and the inning dies on a baserunning mistake. Eliza did not drift. She stayed tight to the bag, tracked it the whole way, and was back the instant it was caught. No panic. No double off.",
+      "**The pickoff.** Then she got greedy the right way. She took an aggressive secondary lead, far enough that the catcher could not let it go. The catcher bit and fired behind her to first. Eliza read it the whole way and was back standing up. And just like that the defense was thinking about her instead of the hitter. That is a baserunner putting pressure on a defense on purpose.",
+      "**The read.** Cora Zichmiller found the one sliver of grass between a center fielder who can really play and Keystone's slick middle infield. Charlotte scored. Audrey scored. 5 to 4, just like that. And off her secondary, Eliza read the ball down before it landed, never hesitated, and sprinted to second. The tying run was alive. I am not sure how many eleven and twelve year olds make that read. She made it like it was nothing.",
+      "**The inch.** Then the play of the game, and almost nobody in the stands saw it for what it was. Liv Walker chopped a ball down to third. The Keystone third baseman is crafty and sharp, and she played it perfectly. She did not sit back too far and she did not overcommit, so she had a real shot at the play at third. Eliza had already read it and was already flying. She did not slide. She did not pull up. She ran so hard she nearly overran the bag, and she beat the throw by an inch.",
+      {pull:"One inch."},
+      "That is the inch we had been fighting and climbing for all tournament. The inch you give back the moment you slow down, and the inch you steal when you refuse to. Lose that inch and the rally is a runner short, and Brooklyn Barnwell never gets her swing.",
       "Bases loaded. Two outs. The tying run standing ninety feet away, because Eliza had carried it there one base at a time.",
-      "Then Brooklyn Barnwell singled to left. Eliza scored the tying run. Cora scored the winner. 6 to 5.",
-      {hype:"Stitched, Not Struck",sub:"Four kids in a row who refused to be the one who ended it"},
-      "Everyone saw the game winner, and it deserves to be remembered. But it was the last stitch in the seam, not the first. Charlotte set it. Audrey moved it. Eliza carried it ninety feet on reads and hustle that looked routine. Lose that inch and the rally is a runner short, and Brooklyn never gets her swing.",
-      "From the stands it was a walk-off. But the detail in the fabric tells the real story. A grinding walk. A scrappy single. A piece of baserunning no box score will ever explain. That is the part worth slowing down for.",
-      "Watch Eliza's feet one more time. Then watch the whole team do it again."
+      "Brooklyn singled to left. Eliza scored the tying run. Cora Zichmiller scored the winner. 6 to 5.",
+      "## That Is the Ocean and the Waves",
+      "Everyone saw the game winner. I will love it forever, and this site will preserve that.",
+      "But hers was the last wave in the set, not the first. Charlotte set it. Audrey moved it. Eliza carried it ninety feet on reads and hustle that looked routine. My daughter just happened to show up with the table already set.",
+      "From the stands it was a walk-off. But the current beneath it tells the real story. A grinding walk. A scrappy hustle single. A piece of baserunning that no box score will ever explain. Two outs, down to nothing, and four kids in a row who refused to be the one who ended it.",
+      {img:CHAMPSPHOTO, cap:"Tampa Bayshore All-Stars. District 6 Champions. Wave by wave, inch by inch."},
+      "Read the whole night in \"The Walk-Off Kids Do It Again.\" Then come back and watch Eliza's feet one more time. That is the part worth slowing down for."
     ]
   },
   {
@@ -912,7 +927,7 @@ function openStory(i){
   document.getElementById('rdrByline').textContent='By '+s.byline;
   const body=document.getElementById('rdrBody');body.innerHTML='';
   s.body.forEach(p=>{
-    if(typeof p==='string'){const el=document.createElement('p');el.textContent=p;body.appendChild(el);}
+    if(typeof p==='string'){if(p.indexOf('## ')===0){var h=document.createElement('div');h.className='rdr-shead';h.textContent=p.slice(3);body.appendChild(h);}else{var el=document.createElement('p');el.innerHTML=p.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');body.appendChild(el);}}
     else if(p.hype){const el=document.createElement('div');el.className='rdr-hype';el.innerHTML='<div class="big">\u2605 '+p.hype+' \u2605</div>'+(p.sub?'<div class="sub">'+p.sub+'</div>':'');body.appendChild(el);}
     else if(p.svg){const el=document.createElement('div');el.className='rdr-fig';el.innerHTML=p.svg;body.appendChild(el);}
     else if(p.img){const el=document.createElement('div');el.className='rdr-fig';const im=document.createElement('img');im.src=p.img;im.alt=p.cap||'';el.appendChild(im);if(p.cap){const cp=document.createElement('div');cp.className='fig-cap';cp.textContent=p.cap;el.appendChild(cp);}body.appendChild(el);}
