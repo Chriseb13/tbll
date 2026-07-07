@@ -323,12 +323,7 @@
   .footer-tag{font-family:'Bangers',cursive;font-size:1.15rem;color:var(--red);letter-spacing:.04em;margin-top:2px}
   .footer-champ{font-family:'Chakra Petch',monospace;font-weight:600;font-size:.7rem;letter-spacing:.12em;color:var(--mute);margin-top:12px;text-transform:uppercase}
   .gc-foot{display:inline-block;margin-top:14px;font-family:'Chakra Petch',monospace;font-size:.72rem;letter-spacing:.08em;color:var(--mute);text-decoration:underline}
-  .storysearch{position:relative;z-index:1;margin:0 0 16px}
-  .storysearch input{width:100%;box-sizing:border-box;font-family:'Chakra Petch';font-weight:700;font-size:1rem;color:#14141c;background:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:4px 4px 0 var(--ink);padding:12px 14px 12px 40px;outline:none}
-  .storysearch input::placeholder{color:#9a9384}
-  .storysearch input:focus{box-shadow:4px 4px 0 var(--red)}
-  .storysearch .si{position:absolute;left:13px;top:50%;transform:translateY(-50%);z-index:2;pointer-events:none}
-  .nostory{position:relative;z-index:1;font-family:'Chakra Petch';font-weight:700;color:#6b6456;padding:8px 2px}
+  .sc-date{display:block;font-family:'Chakra Petch';font-weight:700;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#9a9384;margin:0 0 6px}
 </style>
 <script>
   if('scrollRestoration' in history){history.scrollRestoration='manual';}
@@ -393,7 +388,6 @@
   <section id="stories">
     <span class="seclabel">Game Recaps</span>
     <div class="sechead b">The Story</div>
-    <div class="storysearch"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14141c" stroke-width="3" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input id="storyq" type="search" placeholder="Search a player or story..." autocomplete="off"></div>
     <div class="storylist" id="storylist"></div>
   </section>
 
@@ -565,7 +559,7 @@ const BURST="M100.0,1.0 L118.4,31.4 L149.5,14.3 L150.2,49.8 L185.7,50.5 L168.6,8
 const STORIES=[
   {
     k:"k1", kick:"Dugout Notebook",
-    head:"Second Chances and Unbreakable Confidence",
+    head:"Second Chances and Unbreakable Confidence",pub:"July 3",
     dek:"The hit is never owed. The confidence to want it again is the part that is yours.",
     byline:"Dugout Notebook",
     body:[
@@ -594,7 +588,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Featured · Game 2 vs Keystone",
-    head:"You See the Ocean",
+    head:"You See the Ocean",pub:"June 29",
     dek:"I see the waves, the current, the ripples, the tide.",
     byline:"Tampa Bayshore All-Stars",
     body:[
@@ -634,7 +628,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Championship Game 2 · June 19",
-    head:"Don't Call It a Comeback 🏆",
+    head:"Don't Call It a Comeback 🏆",pub:"June 20",
     dek:"How Tampa Bayshore answered a 16 to 1 loss with a seven-run fifth and took the District 6 title from a stacked Keystone team.",
     byline:"Dugout Beat",
     body:[
@@ -676,7 +670,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Championship Game 1 · June 18",
-    head:"Head Up, Shoulders Back 🔥",
+    head:"Head Up, Shoulders Back 🔥",pub:"June 19",
     dek:"Keystone ties the series at one apiece, forcing a deciding game against top seed Tampa Bayshore.",
     byline:"Dugout Beat",
     body:[
@@ -698,7 +692,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Game 2 Recap · June 16",
-    head:"The Walk-Off Kids Do It Again",
+    head:"The Walk-Off Kids Do It Again",pub:"June 16",
     photo:BADDIES,
     dek:"Brooklyn Barnwell's two-out single in the sixth caps a four-run rally and a 6-5 win over a tough Keystone, Tampa Bayshore's second straight walk-off.",
     byline:"Tampa Bayshore Beat",
@@ -719,7 +713,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Dugout Notebook",
-    head:"Three Practices",
+    head:"Three Practices",pub:"June 19",
     bonus:true,
     dek:"Three practices and a roster of kids who have known each other less than a month. We cannot explain how it became a team. It just did.",
     byline:"The Coaches",
@@ -743,7 +737,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Off Day · Dugout Notebook",
-    head:"The Engine Room",
+    head:"The Engine Room",pub:"June 17",
     dek:"Liv Walker, Briley Bishop, and Emma Ritchie do the work the highlight reel skips, and that work wins tournaments.",
     byline:"Dugout Notebook",
     body:[
@@ -762,7 +756,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Off Day · Dugout Notebook",
-    head:"Speed Never Slumps",
+    head:"Speed Never Slumps",pub:"June 16",
     dek:"Emma Ritchie, Charley Seckinger, Cora Zichmiller, and Audrey Girsch turn ninety feet into a weapon.",
     byline:"Dugout Notebook",
     body:[
@@ -782,7 +776,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Off Day · Dugout Notebook",
-    head:"Two Aces, One Circle",
+    head:"Two Aces, One Circle",pub:"June 16",
     dek:"Cora Zichmiller and Eliza Oh give Tampa Bayshore something most teams would trade a season for, two pitchers they trust.",
     byline:"Dugout Notebook",
     body:[
@@ -803,7 +797,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Off Day · Dugout Notebook",
-    head:"The Eye",
+    head:"The Eye",pub:"June 16",
     dek:"Charlotte Barber has turned the walk into a weapon. Four free passes in two games, and a rally every time she refuses to chase.",
     byline:"Dugout Notebook",
     body:[
@@ -821,7 +815,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Off Day · Dugout Notebook",
-    head:"Hit It Hard, Let It Find Grass",
+    head:"Hit It Hard, Let It Find Grass",pub:"June 16",
     dek:"Maisy Brewer keeps squaring it up. The box score will catch up to the barrels.",
     byline:"Dugout Notebook",
     body:[
@@ -839,7 +833,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Off Day · Dugout Notebook",
-    head:"Leather",
+    head:"Leather",pub:"June 16",
     dek:"Olivia Moon, Audrey Girsch, and a defense that travels. The gloves have saved as many runs as the bats have scored.",
     byline:"Dugout Notebook",
     body:[
@@ -857,7 +851,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Off Day · Dugout Notebook",
-    head:"Next Play",
+    head:"Next Play",pub:"June 16",
     dek:"Effort and attitude is all we can control. Tampa Bayshore has turned that into two comebacks and a spot in the championship.",
     byline:"Dugout Notebook",
     body:[
@@ -875,7 +869,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Off Day · Dugout Notebook",
-    head:"By the Numbers",
+    head:"By the Numbers",pub:"June 16",
     dek:"Two games in the books. A quick look at who is leading the way for Tampa Bayshore.",
     byline:"Dugout Notebook",
     body:[
@@ -894,7 +888,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Off Day · Dugout Notebook",
-    head:"Never Out of It",
+    head:"Never Out of It",pub:"June 16",
     dek:"Two games, two walk-offs, two comebacks. Tampa Bayshore has made the last at-bat its favorite place to be.",
     byline:"Dugout Notebook",
     body:[
@@ -912,7 +906,7 @@ const STORIES=[
   },
   {
     k:"k1", kick:"Game 1 Recap \u00b7 June 15",
-    head:"Effort Knows No Score",
+    head:"Effort Knows No Score",pub:"June 16",
     stamp:"Moon's Big Catch",
     dek:"Down 5-0 in the second, Tampa Bayshore rallied past Palma Ceia for a 7-6 walk-off win in the tournament opener.",
     byline:"Tampa Bayshore Beat",
@@ -937,36 +931,25 @@ const STORIES=[
 
 const slist=document.getElementById('storylist');
 const blist=document.getElementById('bonuslist');
-function storyText(s){let t=(s.kick||'')+' '+(s.head||'')+' '+(s.dek||'');(s.body||[]).forEach(p=>{t+=' '+(typeof p==='string'?p:(p.pull||p.hype||p.sub||p.sec||p.cap||''));});return t.toLowerCase();}
-function renderStories(q){
-  q=(q||'').trim().toLowerCase();
-  const qre=q?new RegExp('\\b'+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i'):null;
-  slist.innerHTML='';blist.innerHTML='';
-  let featured=false,shown=0;
+let featured=false;
 STORIES.forEach((s,i)=>{
-  if(q && !qre.test(storyText(s))) return;
-  shown++;
   const bonus=s.bonus||s.kick.indexOf('Off Day')===0;
   const c=document.createElement('div');
   if(!bonus && !featured){
     featured=true;
     c.className='scard feature';
-    c.innerHTML=`<span class="sc-kick ${s.k}">${s.kick}</span><span class="feat-tag">★ Latest</span><div class="sc-head feat-head">${s.head}</div><div class="sc-dek">${s.dek}</div><span class="sc-read">Read the Full Story ▸</span>`;
+    c.innerHTML=`<span class="sc-date">${s.pub||''}</span><span class="sc-kick ${s.k}">${s.kick}</span><span class="feat-tag">★ Latest</span><div class="sc-head feat-head">${s.head}</div><div class="sc-dek">${s.dek}</div><span class="sc-read">Read the Full Story ▸</span>`;
   } else {
     c.className='scard past'+(s.img?' has-catch':'')+(s.photo?' has-photo':'')+(s.stamp?' has-stamp':'');
     const catchArt=s.img?`<div class="catch-wrap"><img class="catch-img" src="${s.img}" alt="${s.catchAlt||''}"><span class="catch-tag">${s.catchTag||'The Catch'}</span></div>`:'';
     const photoArt=s.photo?`<div class="photo-wrap"><img class="photo-img" src="${s.photo}" alt="${s.photoAlt||''}"></div>`:'';
     let stampEl='';
     if(s.stamp){const w=s.stamp.toUpperCase().split(' ');const top=w[0],rest=w.slice(1).join(' ');stampEl=`<div class="stamp"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="ht${i}" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.2" cy="2.2" r="1.2" fill="#14141c" opacity="0.16"/></pattern><clipPath id="bc${i}"><path d="${BURST}"/></clipPath></defs><path d="${BURST}" fill="#14141c" transform="translate(6,8)"/><path d="${BURST}" fill="#e2382f" transform="translate(3,4)"/><path d="${BURST}" fill="#ffce2e" stroke="#14141c" stroke-width="5" stroke-linejoin="round"/><rect clip-path="url(#bc${i})" x="0" y="0" width="200" height="200" fill="url(#ht${i})"/><text x="100" y="90" text-anchor="middle" class="bz-sm">${top}</text><text x="100" y="126" text-anchor="middle" class="bz-lg">${rest}</text></svg></div>`;}
-    c.innerHTML=`<span class="sc-kick ${s.k}">${s.kick}</span><div class="sc-head past-head">${s.head}</div>${catchArt}${photoArt}${stampEl}<span class="sc-read sc-read-sm">Read ▸</span>`;
+    c.innerHTML=`<span class="sc-date">${s.pub||''}</span><span class="sc-kick ${s.k}">${s.kick}</span><div class="sc-head past-head">${s.head}</div>${catchArt}${photoArt}${stampEl}<span class="sc-read sc-read-sm">Read ▸</span>`;
   }
   c.onclick=()=>openStory(i);
   (bonus?blist:slist).appendChild(c);
 });
-  if(q && shown===0){slist.innerHTML='<div class="nostory">No stories found. Try a first name.</div>';}
-}
-renderStories('');
-(function(){var qi=document.getElementById('storyq');if(qi)qi.addEventListener('input',function(){renderStories(this.value);});})();
 const reader=document.getElementById('reader');
 function openStory(i){
   const s=STORIES[i];
