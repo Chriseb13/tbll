@@ -170,6 +170,23 @@
 
   /* ---------- STORIES ---------- */
   .storylist{display:flex;flex-direction:column;gap:14px}
+  #recaps{background:#e9f0fd;border:3px solid var(--ink);border-radius:8px;box-shadow:6px 6px 0 var(--ink);padding:18px 16px 8px;margin:16px 0 26px}
+  #recaps .seclabel{background:var(--blue)}
+  .itin-btn{display:block;text-decoration:none;background:var(--gold);border:4px solid var(--ink);border-radius:12px;box-shadow:7px 7px 0 var(--ink);padding:15px 18px;margin:2px 0 24px;text-align:center;transition:transform .05s,box-shadow .05s}
+  .itin-btn:active{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+  .itin-btn-k{display:block;font-family:'Chakra Petch',monospace;font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+  .itin-btn-h{display:block;font-family:'Bangers',cursive;font-size:2.7rem;line-height:1;letter-spacing:.03em;color:var(--ink);margin:1px 0 3px}
+  .itin-btn-go{display:block;font-family:'Chakra Petch',monospace;font-weight:700;font-size:.82rem;color:var(--ink)}
+  #itinerary .itin-panel{background:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink);padding:14px 16px 16px}
+  .itin-day{font-family:'Bangers',cursive;font-size:1.4rem;letter-spacing:.04em;color:var(--blue);-webkit-text-stroke:.4px var(--ink);margin:16px 0 6px}
+  .itin-day:first-child{margin-top:2px}
+  .itin-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed rgba(20,20,28,.14)}
+  .itin-row:last-of-type{border-bottom:none}
+  .itin-time{flex:0 0 auto;min-width:78px;background:var(--gold);border:2px solid var(--ink);border-radius:5px;font-family:'Chakra Petch',monospace;font-weight:700;font-size:.72rem;text-align:center;padding:4px 6px;color:var(--ink)}
+  .itin-txt{font-family:'Chakra Petch',monospace;font-size:.87rem;line-height:1.4;color:var(--ink);padding-top:2px}
+  .itin-txt b{color:var(--red)}
+  .itin-note{font-family:'Chakra Petch',monospace;font-size:.75rem;color:var(--mute);margin:14px 0 0;line-height:1.4}
+  .itin-map{display:inline-block;margin-top:12px;background:var(--blue);color:#fff;text-decoration:none;font-family:'Chakra Petch',monospace;font-weight:700;font-size:.78rem;border:2px solid var(--ink);border-radius:5px;box-shadow:3px 3px 0 var(--ink);padding:8px 13px}
   .bonuslist{display:grid;grid-template-columns:1fr;gap:12px}
   @media(min-width:600px){.bonuslist{grid-template-columns:1fr 1fr}}
   .bonus-intro{font-family:'Chakra Petch';font-weight:700;font-size:.82rem;color:#6b6456;margin:-4px 0 14px;letter-spacing:.02em}
@@ -378,17 +395,31 @@
   <a href="#watch">Watch</a>
   <a href="#bracket">Bracket</a>
   <a href="#schedule">Schedule</a>
+  <a href="#itinerary">Itinerary</a>
   <a href="#players">Players</a>
-  <a href="#bonus">Bonus</a>
+  <a href="#articles">Articles</a>
 </nav>
 
 <div class="wrap">
 
   <!-- LATEST RESULT + UP NEXT -->
+  <a class="itin-btn" href="#itinerary">
+    <span class="itin-btn-k">State Tournament Weekend · July 17-19</span>
+    <span class="itin-btn-h">Itinerary</span>
+    <span class="itin-btn-go">Tap for the full plan ▸</span>
+  </a>
+
   <section id="stories">
-    <span class="seclabel">Game Recaps</span>
+    <span class="seclabel">Latest</span>
     <div class="sechead b">The Story</div>
     <div class="storylist" id="storylist"></div>
+  </section>
+
+  <!-- DISTRICT GAME RECAPS -->
+  <section id="recaps">
+    <span class="seclabel">District Tournament</span>
+    <div class="sechead b">District Recaps</div>
+    <div class="storylist" id="recaplist"></div>
   </section>
 
   <!-- STORIES -->
@@ -472,6 +503,30 @@
     <div class="sched-note">G2 time set by G1: win · 1:00 PM, lose · 11:00 AM. Pool B winner advances to the Championship.</div>
   </section>
 
+  <!-- ITINERARY -->
+  <section id="itinerary">
+    <span class="seclabel">Team Travel</span>
+    <div class="sechead b">State Weekend Itinerary</div>
+    <div class="itin-panel">
+      <div class="itin-day">Friday · July 17</div>
+      <div class="itin-row"><span class="itin-time">11:30 AM</span><span class="itin-txt">Depart Tampa. Coach Chris driving the team van.</span></div>
+      <div class="itin-row"><span class="itin-time">1:00 PM</span><span class="itin-txt">Lunch stop.</span></div>
+      <div class="itin-row"><span class="itin-time">2:30 PM</span><span class="itin-txt">Arrive at team hotel.</span></div>
+      <div class="itin-row"><span class="itin-time">2:30 PM</span><span class="itin-txt">Pool time for the girls, until 4:00.</span></div>
+      <div class="itin-row"><span class="itin-time">4:00 PM</span><span class="itin-txt">Family check-in at hotel.</span></div>
+      <div class="itin-row"><span class="itin-time">5:00 PM</span><span class="itin-txt">Bus to the field.</span></div>
+      <div class="itin-row"><span class="itin-time">5:30 PM</span><span class="itin-txt">Watch the 10U All-Stars game. Optional, but let's support them.</span></div>
+      <div class="itin-row"><span class="itin-time">Post game</span><span class="itin-txt">Team dinner at <b>Village Inn</b>, sponsored by the Walker family. Thank you Walkers.</span></div>
+      <div class="itin-row"><span class="itin-time">After</span><span class="itin-txt">Back to hotel.</span></div>
+      <div class="itin-day">Saturday · July 18</div>
+      <div class="itin-row"><span class="itin-time">7:00 AM</span><span class="itin-txt">Breakfast in uniform.</span></div>
+      <div class="itin-row"><span class="itin-time">7:30 AM</span><span class="itin-txt">Bus to field.</span></div>
+      <div class="itin-row"><span class="itin-time">9:00 AM</span><span class="itin-txt"><b>Game 1</b> vs Section 2.</span></div>
+      <p class="itin-note">Parents able to leave at 11:30 AM are welcome to follow the van.</p>
+      <a class="itin-map" href="https://maps.app.goo.gl/EkZEQxeXE71jdrc47?g_st=ic" target="_blank" rel="noopener">Team Hotel Map ▸</a>
+    </div>
+  </section>
+
   <!-- PLAYERS -->
   <section id="players">
     <span class="seclabel">Tap a player</span>
@@ -480,10 +535,10 @@
   </section>
 
   <!-- BONUS -->
-  <section id="bonus">
-    <span class="seclabel">Bonus · Dugout Notebook</span>
-    <div class="sechead b">Bonus Content</div>
-    <p class="bonus-intro">Off-day features and player spotlights. Extra credit, tap any to read.</p>
+  <section id="articles">
+    <span class="seclabel">The Dugout Notebook</span>
+    <div class="sechead b">Articles</div>
+    <p class="bonus-intro">Every story and player spotlight on the site. Tap any to read.</p>
 
   <section id="listen">
     <div class="listen-card">
@@ -930,25 +985,44 @@ const STORIES=[
 ];
 
 const slist=document.getElementById('storylist');
+const recaplist=document.getElementById('recaplist');
 const blist=document.getElementById('bonuslist');
-let featured=false;
-STORIES.forEach((s,i)=>{
-  const bonus=s.bonus||s.kick.indexOf('Off Day')===0;
+function pastCard(s,i){
   const c=document.createElement('div');
-  if(!bonus && !featured){
-    featured=true;
-    c.className='scard feature';
-    c.innerHTML=`<span class="sc-date">${s.pub||''}</span><span class="sc-kick ${s.k}">${s.kick}</span><span class="feat-tag">★ Latest</span><div class="sc-head feat-head">${s.head}</div><div class="sc-dek">${s.dek}</div><span class="sc-read">Read the Full Story ▸</span>`;
-  } else {
-    c.className='scard past'+(s.img?' has-catch':'')+(s.photo?' has-photo':'')+(s.stamp?' has-stamp':'');
-    const catchArt=s.img?`<div class="catch-wrap"><img class="catch-img" src="${s.img}" alt="${s.catchAlt||''}"><span class="catch-tag">${s.catchTag||'The Catch'}</span></div>`:'';
-    const photoArt=s.photo?`<div class="photo-wrap"><img class="photo-img" src="${s.photo}" alt="${s.photoAlt||''}"></div>`:'';
-    let stampEl='';
-    if(s.stamp){const w=s.stamp.toUpperCase().split(' ');const top=w[0],rest=w.slice(1).join(' ');stampEl=`<div class="stamp"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="ht${i}" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.2" cy="2.2" r="1.2" fill="#14141c" opacity="0.16"/></pattern><clipPath id="bc${i}"><path d="${BURST}"/></clipPath></defs><path d="${BURST}" fill="#14141c" transform="translate(6,8)"/><path d="${BURST}" fill="#e2382f" transform="translate(3,4)"/><path d="${BURST}" fill="#ffce2e" stroke="#14141c" stroke-width="5" stroke-linejoin="round"/><rect clip-path="url(#bc${i})" x="0" y="0" width="200" height="200" fill="url(#ht${i})"/><text x="100" y="90" text-anchor="middle" class="bz-sm">${top}</text><text x="100" y="126" text-anchor="middle" class="bz-lg">${rest}</text></svg></div>`;}
-    c.innerHTML=`<span class="sc-date">${s.pub||''}</span><span class="sc-kick ${s.k}">${s.kick}</span><div class="sc-head past-head">${s.head}</div>${catchArt}${photoArt}${stampEl}<span class="sc-read sc-read-sm">Read ▸</span>`;
-  }
+  c.className='scard past'+(s.img?' has-catch':'')+(s.photo?' has-photo':'')+(s.stamp?' has-stamp':'');
+  const catchArt=s.img?`<div class="catch-wrap"><img class="catch-img" src="${s.img}" alt="${s.catchAlt||''}"><span class="catch-tag">${s.catchTag||'The Catch'}</span></div>`:'';
+  const photoArt=s.photo?`<div class="photo-wrap"><img class="photo-img" src="${s.photo}" alt="${s.photoAlt||''}"></div>`:'';
+  let stampEl='';
+  if(s.stamp){const w=s.stamp.toUpperCase().split(' ');const top=w[0],rest=w.slice(1).join(' ');stampEl=`<div class="stamp"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="ht${i}" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.2" cy="2.2" r="1.2" fill="#14141c" opacity="0.16"/></pattern><clipPath id="bc${i}"><path d="${BURST}"/></clipPath></defs><path d="${BURST}" fill="#14141c" transform="translate(6,8)"/><path d="${BURST}" fill="#e2382f" transform="translate(3,4)"/><path d="${BURST}" fill="#ffce2e" stroke="#14141c" stroke-width="5" stroke-linejoin="round"/><rect clip-path="url(#bc${i})" x="0" y="0" width="200" height="200" fill="url(#ht${i})"/><text x="100" y="90" text-anchor="middle" class="bz-sm">${top}</text><text x="100" y="126" text-anchor="middle" class="bz-lg">${rest}</text></svg></div>`;}
+  c.innerHTML=`<span class="sc-date">${s.pub||''}</span><span class="sc-kick ${s.k}">${s.kick}</span><div class="sc-head past-head">${s.head}</div>${catchArt}${photoArt}${stampEl}<span class="sc-read sc-read-sm">Read ▸</span>`;
   c.onclick=()=>openStory(i);
-  (bonus?blist:slist).appendChild(c);
+  return c;
+}
+const recapItems=[];
+STORIES.forEach((s,i)=>{
+  const isRecap=/recap/i.test(s.kick)||/championship game/i.test(s.kick);
+  // Featured card (the latest story) sits at the top
+  if(i===0){
+    const f=document.createElement('div');
+    f.className='scard feature';
+    f.innerHTML=`<span class="sc-date">${s.pub||''}</span><span class="sc-kick ${s.k}">${s.kick}</span><span class="feat-tag">★ Latest</span><div class="sc-head feat-head">${s.head}</div><div class="sc-dek">${s.dek}</div><span class="sc-read">Read the Full Story ▸</span>`;
+    f.onclick=()=>openStory(i);
+    slist.appendChild(f);
+  }
+  // Recaps get their own section (sorted below); every other story is an article
+  if(isRecap){ recapItems.push({s,i}); }
+  else { blist.appendChild(pastCard(s,i)); }
+});
+// Order recaps chronologically: Game 1, Game 2, then Championship games
+const MO={january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11};
+function recapDate(k){const p=k.split('\u00b7').pop().trim().split(/\s+/);return new Date(2026,(MO[(p[0]||'').toLowerCase()]||0),parseInt(p[1])||0);}
+recapItems.sort((a,b)=>recapDate(a.s.kick)-recapDate(b.s.kick));
+const OPP={'June 15':'Palma Ceia','June 16':'Keystone','June 18':'Keystone','June 19':'Keystone'};
+recapItems.forEach(({s,i},idx)=>{
+  const gdate=s.kick.split('\u00b7').pop().trim();
+  const opp=OPP[gdate]||gdate;
+  const rs=Object.assign({},s,{kick:`Game ${idx+1} v ${opp}`});
+  recaplist.appendChild(pastCard(rs,i));
 });
 const reader=document.getElementById('reader');
 function openStory(i){
