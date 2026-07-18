@@ -172,10 +172,10 @@
   .storylist{display:flex;flex-direction:column;gap:14px}
   #recaps{background:#e9f0fd;border:3px solid var(--ink);border-radius:8px;box-shadow:6px 6px 0 var(--ink);padding:18px 16px 8px;margin:16px 0 26px}
   #recaps .seclabel{background:var(--blue)}
-  .itin-btn{display:block;text-decoration:none;background:var(--gold);border:4px solid var(--ink);border-radius:12px;box-shadow:7px 7px 0 var(--ink);padding:15px 18px;margin:2px 0 24px;text-align:center;transition:transform .05s,box-shadow .05s}
+  .itin-btn{display:block;text-decoration:none;background:#FFF4DC;border:4px solid var(--ink);border-radius:12px;box-shadow:7px 7px 0 var(--ink);padding:15px 18px;margin:2px 0 24px;text-align:center;transition:transform .05s,box-shadow .05s}
   .itin-btn:active{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
   .itin-btn-k{display:block;font-family:'Chakra Petch',monospace;font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
-  .itin-btn-h{display:block;font-family:'Bangers',cursive;font-size:2.7rem;line-height:1;letter-spacing:.03em;color:var(--ink);margin:1px 0 3px}
+  .itin-btn-h{display:block;font-family:'Bangers',cursive;font-size:2.7rem;line-height:1;letter-spacing:.03em;color:var(--blue);-webkit-text-stroke:.6px var(--ink);margin:1px 0 3px}
   .itin-btn-go{display:block;font-family:'Chakra Petch',monospace;font-weight:700;font-size:.82rem;color:var(--ink)}
   #itinerary .itin-panel{background:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink);padding:14px 16px 16px}
   .itin-day{font-family:'Bangers',cursive;font-size:1.4rem;letter-spacing:.04em;color:var(--blue);-webkit-text-stroke:.4px var(--ink);margin:16px 0 6px}
@@ -255,15 +255,15 @@
   .stamp .bz-sm{font-family:'Bangers',cursive;font-size:19px;fill:var(--ink);letter-spacing:.5px}
   .stamp .bz-lg{font-family:'Bangers',cursive;font-size:30px;fill:#fff;stroke:var(--ink);stroke-width:2.6px;paint-order:stroke;stroke-linejoin:round;letter-spacing:.5px}
 
-  .hero-champ{display:none;background:var(--gold);color:var(--ink)}
-  .hero-champ::before{content:"";position:absolute;inset:-20%;z-index:0;background:repeating-conic-gradient(from 0deg at 50% 40%, rgba(20,20,28,.10) 0deg 3deg, transparent 3deg 9deg)}
+  .hero-champ{display:none;background:#111320;color:#fff;box-shadow:inset 0 0 0 3px #9A7415}
+  .hero-champ::before{content:"";position:absolute;inset:-20%;z-index:0;background:linear-gradient(65deg, transparent 40%, rgba(255,244,220,.05) 47%, transparent 54%),linear-gradient(-65deg, transparent 40%, rgba(255,244,220,.05) 47%, transparent 54%),repeating-conic-gradient(from 0deg at 50% 40%, rgba(154,116,21,.32) 0deg 3deg, transparent 3deg 9deg)}
   .champs .hero{display:none}
   .champs .hero-champ{display:block}
-  .crest-champ{background:var(--ink);color:var(--gold)}
+  .crest-champ{background:var(--ink);color:var(--gold);border-color:#9A7415}
   .trophy{position:relative;z-index:3;font-size:3.1rem;line-height:1;margin:6px 0 2px;filter:drop-shadow(3px 4px 0 rgba(20,20,28,.4))}
-  .champ-h1{position:relative;z-index:3;font-family:'Bangers',cursive;font-size:clamp(2.7rem,13vw,4.9rem);line-height:.92;letter-spacing:.01em;color:#fff;-webkit-text-stroke:2px var(--ink);text-shadow:4px 4px 0 var(--ink);margin:2px 0}
-  .champ-word{color:var(--red);-webkit-text-stroke:2px var(--ink)}
-  .champ-tag{background:none;border:0;padding:0;box-shadow:none;border-radius:0;color:#fff;font-size:clamp(1.55rem,7.2vw,2.7rem);line-height:.95;-webkit-text-stroke:0.7px var(--ink);text-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg);letter-spacing:.03em;margin-top:6px}
+  .champ-h1{position:relative;z-index:3;font-family:'Bangers',cursive;font-size:clamp(2.3rem,11.5vw,4.4rem);line-height:.92;letter-spacing:.01em;color:var(--paper);-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--ink),6px 6px 0 rgba(154,116,21,.55);margin:2px 0;white-space:nowrap}
+  .champ-word{color:var(--red);-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--ink),6px 6px 0 rgba(154,116,21,.55)}
+  .champ-tag{background:none;border:0;padding:0;box-shadow:none;border-radius:0;color:#fff;font-size:clamp(1.25rem,5.6vw,2.1rem);line-height:.95;-webkit-text-stroke:0.7px var(--ink);text-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg);letter-spacing:.03em;margin-top:6px}
   .res-badge.final{background:var(--mute)}
   .seed{display:inline-block;font-family:'Chakra Petch';font-weight:700;font-size:.58rem;background:var(--gold);color:var(--ink);border:1.5px solid var(--ink);border-radius:9px;padding:1px 6px;line-height:1.25;text-align:center;margin-right:4px;vertical-align:middle}
   .seed2{background:#c9ced8}
@@ -390,7 +390,7 @@
   </svg>
   <div class="hero-in">
     <span class="crest crest-champ">Tampa Bayshore All-Stars</span>
-    <h1 class="champ-h1">Playing for the<br><span class="champ-word">Title</span></h1>
+    <h1 class="champ-h1"><span class="champ-word">State</span><br>Championship</h1>
     <div class="tagline champ-tag">Baddies of the Bay</div>
   </div>
 </header>
