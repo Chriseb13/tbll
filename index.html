@@ -596,18 +596,18 @@
 const CHAMPS = true;
 if(CHAMPS) document.body.classList.add("champs");
 const ROSTER=[
-  {n:"5",name:"Brooklyn Barnwell",pos:"2B",bat:{ab:9,r:2,h:4,rbi:3,bb:0,so:1},notes:["Walk-Off Single vs Keystone","3 RBI in the Tournament"]},
-  {n:"4",name:"Audrey Girsch",pos:"RF",bat:{ab:8,r:2,h:1,rbi:1,bb:0,so:4},notes:["Diving Catch in Right"]},
-  {n:"16",name:"Charley Seckinger",pos:"C",bat:{ab:9,r:4,h:5,rbi:3,bb:0,so:0},notes:["Called a Gem Behind the Plate","5 Hits in the Tournament"]},
-  {n:"33",name:"Briley Bishop",pos:"SS",bat:{ab:8,r:1,h:3,rbi:3,bb:2,so:0},notes:["3 RBI in the Tournament"]},
-  {n:"15",name:"Charlotte Barber",pos:"1B",bat:{ab:3,r:1,h:0,rbi:0,bb:5,so:2},notes:["5 Walks in the Tournament","Great Eye"]},
-  {n:"24",name:"Cora Zichmiller",pos:"P",bat:{ab:7,r:3,h:2,rbi:1,bb:3,so:3},pitch:{ip:"9.0",h:10,r:12,er:6,bb:11,so:0},notes:["Started Game 1 in the Circle","Scored the Winning Run"]},
-  {n:"10",name:"Eliza Oh",pos:"P",bat:{ab:6,r:3,h:3,rbi:2,bb:1,so:0},pitch:{ip:"12.1",h:19,r:19,er:12,bb:11,so:9},notes:["Walk-Off Win in the Circle","12.1 IP, 9 K","Walk-Off RBI Single"]},
-  {n:"19",name:"Emma Ritchie",pos:"LF",bat:{ab:7,r:1,h:1,rbi:0,bb:1,so:0},notes:["Bunt Pressure"]},
-  {n:"6",name:"Haven Dalrymple",pos:"C",bat:{ab:2,r:1,h:0,rbi:0,bb:0,so:0},notes:["Masterpiece Behind the Plate","Zero Passed Balls"]},
-  {n:"3",name:"Liv Walker",pos:"3B",bat:{ab:10,r:0,h:3,rbi:1,bb:0,so:1},notes:["Game-Saving Double Play","RBI Single"]},
-  {n:"14",name:"Maisy Brewer",pos:"LF",bat:{ab:8,r:1,h:1,rbi:2,bb:0,so:2},notes:["Hit Barrels All Night","Stolen Bases"]},
-  {n:"9",name:"Olivia Moon",pos:"CF",bat:{ab:6,r:2,h:1,rbi:0,bb:2,so:0},notes:["The Catch vs Palma Ceia","Outfield Assist in Center"]},
+  {n:"5",name:"Brooklyn Barnwell",pos:"2B",bat:{ab:13,r:4,h:7,rbi:4,bb:1,so:1},notes:["Team-Best .538 Average","Walk-Off Single vs Keystone","7 Hits This Summer"]},
+  {n:"16",name:"Charley Seckinger",pos:"SS",bat:{ab:13,r:6,h:6,rbi:4,bb:2,so:0},notes:["Team-High 6 Runs Scored","4 Stolen Bases","Zero Strikeouts All Summer"]},
+  {n:"33",name:"Briley Bishop",pos:"3B",bat:{ab:13,r:3,h:6,rbi:4,bb:2,so:1},notes:[".462 Average","Delivered the First RBI of State"]},
+  {n:"3",name:"Liv Walker",pos:"1B",bat:{ab:15,r:3,h:6,rbi:5,bb:0,so:1},notes:["Home Run at State","Hardest Hit Ball Anyone Has Seen","Team-High 5 RBI and 11 Total Bases"]},
+  {n:"10",name:"Eliza Oh",pos:"P",bat:{ab:9,r:4,h:3,rbi:2,bb:2,so:0},pitch:{ip:"18.1",h:23,r:22,er:13,bb:12,so:12},notes:["Gem in the State Opener vs PSL","Walk-Off Win in the Circle vs Keystone","Staff-High 18.1 Innings"]},
+  {n:"24",name:"Cora Zichmiller",pos:"P",bat:{ab:12,r:5,h:4,rbi:2,bb:4,so:5},pitch:{ip:"13.0",h:11,r:13,er:7,bb:14,so:6},notes:["No-Hitter Into the Final Inning at State","Complete Game Win vs South Walton","3.23 ERA This Summer"]},
+  {n:"9",name:"Olivia Moon",pos:"CF",bat:{ab:10,r:4,h:3,rbi:1,bb:3,so:0},notes:["The Catch vs Palma Ceia","The Sliding Grab vs PSL at State"]},
+  {n:"4",name:"Audrey Girsch",pos:"RF",bat:{ab:11,r:3,h:2,rbi:3,bb:1,so:5},notes:["Two-Run Home Run at State","Diving Catch in Right"]},
+  {n:"14",name:"Maisy Brewer",pos:"LF",bat:{ab:12,r:2,h:2,rbi:5,bb:1,so:2},notes:["Team-High 5 RBI","3 for 3 Stealing Bases"]},
+  {n:"15",name:"Charlotte Barber",pos:"RF",bat:{ab:7,r:2,h:0,rbi:1,bb:6,so:3},notes:["Team-High 6 Walks",".462 On-Base, Great Eye"]},
+  {n:"6",name:"Haven Dalrymple",pos:"C",bat:{ab:5,r:2,h:0,rbi:0,bb:0,so:1},notes:["3 Stolen Bases at State","Caught Every Inning of the State Run","Zero Passed Balls"]},
+  {n:"19",name:"Emma Ritchie",pos:"LF",bat:{ab:7,r:1,h:1,rbi:0,bb:1,so:0},notes:["Bunt Pressure","The Spark Plug"]},
 ];
 
 // ---------- STORIES ----------
@@ -1134,9 +1134,9 @@ function openP(p){
   const b=document.getElementById('mbody');
   const cells=(o,keys)=>keys.map(k=>`<div class="statcell"><div class="v">${o[k]}</div><div class="l">${k.toUpperCase()}</div></div>`).join('');
   if(!p.bat){
-    b.innerHTML='<div class="m-statlabel">Tournament Totals · 2 Games</div><div class="m-statbox">No box-score line for this game.</div>';
+    b.innerHTML='<div class="m-statlabel">Summer 2026 · Districts + State</div><div class="m-statbox">No box-score line for this game.</div>';
   } else {
-    let h='<div class="m-statlabel">Tournament Totals · 2 Games</div>';
+    let h='<div class="m-statlabel">Summer 2026 · Districts + State</div>';
     h+='<div class="stathead">Batting</div><div class="statrow">'+cells(p.bat,['ab','r','h','rbi','bb','so'])+'</div>';
     if(p.pitch){h+='<div class="stathead">Pitching</div><div class="statrow">'+cells(p.pitch,['ip','h','r','er','bb','so'])+'</div>';}
     if(p.notes&&p.notes.length){h+='<div class="chips">'+p.notes.map(n=>`<span class="chip">\u2605 ${n}</span>`).join('')+'</div>';}
