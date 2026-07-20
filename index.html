@@ -177,7 +177,6 @@
   .itin-btn-k{display:block;font-family:'Chakra Petch',monospace;font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
   .itin-btn-h{display:block;font-family:'Bangers',cursive;font-size:2.7rem;line-height:1;letter-spacing:.03em;color:var(--blue);-webkit-text-stroke:.6px var(--ink);margin:1px 0 3px}
   .itin-btn-go{display:block;font-family:'Chakra Petch',monospace;font-weight:700;font-size:.82rem;color:var(--ink)}
-  #itinerary .itin-panel{background:#fff;border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink);padding:14px 16px 16px}
   .itin-day{font-family:'Bangers',cursive;font-size:1.4rem;letter-spacing:.04em;color:var(--blue);-webkit-text-stroke:.4px var(--ink);margin:16px 0 6px}
   .itin-day:first-child{margin-top:2px}
   .itin-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed rgba(20,20,28,.14)}
@@ -411,7 +410,6 @@
   <a href="#watch">Watch</a>
   <a href="#bracket">Bracket</a>
   <a href="#schedule">Schedule</a>
-  <a href="#itinerary">Itinerary</a>
   <a href="#players">Players</a>
   <a href="#articles">Articles</a>
 </nav>
@@ -419,16 +417,19 @@
 <div class="wrap">
 
   <!-- LATEST RESULT + UP NEXT -->
-  <a class="itin-btn" href="#stories" onclick="openStory(0);return false;">
-    <span class="itin-btn-k">State Championship · The Final Word</span>
-    <span class="itin-btn-h">Lightning in a Bottle</span>
-    <span class="itin-btn-go">Read the final story ▸</span>
-  </a>
+  
 
   <section id="stories">
     <span class="seclabel">Latest</span>
     <div class="sechead b">The Story</div>
     <div class="storylist" id="storylist"></div>
+  </section>
+
+  <!-- STATE GAME RECAPS -->
+  <section id="staterecaps">
+    <span class="seclabel">State Tournament</span>
+    <div class="sechead b">State Recaps</div>
+    <div class="storylist" id="staterecaplist"></div>
   </section>
 
   <!-- DISTRICT GAME RECAPS -->
@@ -501,7 +502,7 @@
     <div class="bgame title done"><div class="bg-num">★<small>SEC 7</small></div><div class="bg-body"><div class="bg-when">District 12 did not field a team <span class="pill pill-final">Champs</span></div><div class="bg-teams"><span class="us">Tampa Bayshore</span> advance to State</div></div></div>
     <div class="connector"></div>
     <span class="brlabel">State Tournament</span>
-    <div class="bgame title"><div class="bg-num">★<small>STATE</small></div><div class="bg-body"><div class="bg-when">July 17-19 · St. Cloud LL <span class="pill pill-title">9-11 State</span></div><div class="bg-teams"><span class="us">Tampa Bayshore</span> <span class="vs">v</span> Section 2 · Pool B</div></div></div>
+    <div class="bgame title done"><div class="bg-num">★<small>STATE</small></div><div class="bg-body"><div class="bg-when">July 18-19 · St. Cloud LL <span class="pill pill-final">Final</span></div><div class="bg-teams"><span class="us">Tampa Bayshore</span> · Florida State Runner-Up · 2-1</div></div></div>
   </section>
 
   <!-- SCHEDULE -->
@@ -518,29 +519,14 @@
     </div>
     <div class="sched-sub">State Tournament · St. Cloud · Field 7</div>
     <div class="sched">
-      <div class="srow us"><span class="s-num">G1</span><span class="s-match"><span class="us">Tampa Bayshore</span> vs Section 2</span><span class="s-date">Sat 7/18 · 9:00 AM</span></div>
-      <div class="srow us"><span class="s-num">G2</span><span class="s-match"><span class="us">Tampa Bayshore</span> vs Section 1</span><span class="s-date">Sat 7/18 · 11a / 1p</span></div>
-      <div class="srow"><span class="s-num">★</span><span class="s-match">Championship vs Pool A winner</span><span class="s-date">Sun 7/19 · 10:00 AM</span></div>
+      <div class="srow us"><span class="s-num">G1</span><span class="s-match"><span class="us">Tampa Bayshore</span> 6, Port St. Lucie 3 <span class="s-win">W</span></span><span class="s-date">Sat · 7/18</span></div>
+      <div class="srow us"><span class="s-num">G2</span><span class="s-match"><span class="us">Tampa Bayshore</span> 12, South Walton 1 <span class="s-win">W</span></span><span class="s-date">Sat · 7/18</span></div>
+      <div class="srow"><span class="s-num">★</span><span class="s-match">Doctor Phillips 5, Tampa Bayshore 1</span><span class="s-date">Sun · 7/19</span></div>
     </div>
-    <div class="sched-note">G2 time set by G1: win · 1:00 PM, lose · 11:00 AM. Pool B winner advances to the Championship.</div>
+    <div class="sched-note">Florida State Finalists · 2-1 at State · State Runner-Up</div>
   </section>
 
-  <!-- ITINERARY -->
-  <section id="itinerary">
-    <span class="seclabel">Team Travel</span>
-    <div class="sechead b">State Weekend Itinerary</div>
-    <div class="itin-panel">
-      <div class="itin-day">Sunday · July 19</div>
-      <div class="itin-row"><span class="itin-time">7:30 AM</span><span class="itin-txt">Breakfast in the lobby, dressed and in uniform.</span></div>
-      <div class="itin-row"><span class="itin-time">8:15 AM</span><span class="itin-txt">Leave hotel for the fields.</span></div>
-      <div class="itin-row"><span class="itin-time">8:55 AM</span><span class="itin-txt">Arrive at the fields.</span></div>
-      <div class="itin-row"><span class="itin-time">10:00 AM</span><span class="itin-txt"><b>State Title Game</b>.</span></div>
-      <div class="itin-row"><span class="itin-time">Post game</span><span class="itin-txt">Team celebration at <b>Beef O'Brady's</b>, 2926 13th St, St Cloud. Win, lose, or draw, we are celebrating these girls.</span></div>
-      <a class="itin-map" href="https://maps.app.goo.gl/EkZEQxeXE71jdrc47?g_st=ic" target="_blank" rel="noopener">Team Hotel Map ▸</a>
-      <a class="itin-map" href="https://www.google.com/maps/search/?api=1&query=St+Cloud+Little+League+Park+3001+17th+St+St+Cloud+FL+34769" target="_blank" rel="noopener">Tournament Fields Map ▸</a>
-      <a class="itin-map" href="https://www.google.com/maps/search/?api=1&query=Beef+O+Bradys+2926+13th+St+St+Cloud+FL+34769" target="_blank" rel="noopener">Beef O'Brady's Map ▸</a>
-    </div>
-  </section>
+  
 
   <!-- PLAYERS -->
   <section id="players">
@@ -683,7 +669,6 @@ const STORIES=[
   {
     k:"k1", kick:"State Tournament \u00b7 Game 2 vs South Walton",
     head:"Calm in the Circle, Thunder at the Plate",pub:"July 18",
-    img:THUNDERART,catchTag:"Calm & Thunder",catchAlt:"Cora and the Thunder",
     photo:PRECISIONIST,photoAlt:"Cora Zichmiller, The Precisionist",
     dek:"Cora Zichmiller carries a no-hitter into the final inning and Tampa Bayshore rolls into the state title game, 12-1.",
     byline:"Tampa Bayshore Beat",
@@ -1136,6 +1121,7 @@ function pastCard(s,i){
   return c;
 }
 const recapItems=[];
+const stateItems=[];
 STORIES.forEach((s,i)=>{
   const isRecap=/recap/i.test(s.kick)||/championship game/i.test(s.kick);
   // Featured card (the latest story) sits at the top
@@ -1148,7 +1134,9 @@ STORIES.forEach((s,i)=>{
     slist.appendChild(f);
   }
   // Recaps get their own section (sorted below); every other story is an article
-  if(isRecap){ recapItems.push({s,i}); }
+  const isState=/^State Tournament/.test(s.kick);
+  if(isState){ stateItems.push({s,i}); }
+  else if(isRecap){ recapItems.push({s,i}); }
   else { blist.appendChild(pastCard(s,i)); }
 });
 // Order recaps chronologically: Game 1, Game 2, then Championship games
@@ -1161,6 +1149,16 @@ recapItems.forEach(({s,i},idx)=>{
   const opp=OPP[gdate]||gdate;
   const rs=Object.assign({},s,{kick:`Game ${idx+1} v ${opp}`});
   recaplist.appendChild(pastCard(rs,i));
+});
+stateItems.sort((a,b)=>{
+  const g=k=>parseInt((k.match(/Game\s+(\d+)/)||[0,0])[1]);
+  return g(a.s.kick)-g(b.s.kick);
+});
+stateItems.forEach(({s,i})=>{
+  const m=s.kick.match(/Game\s+(\d+)\s+vs\s+(.+)$/);
+  const label=m?`Game ${m[1]} v ${m[2]==='PSL'?'Port St. Lucie':m[2]}`:s.kick;
+  const rs=Object.assign({},s,{kick:label});
+  staterecaplist.appendChild(pastCard(rs,i));
 });
 const reader=document.getElementById('reader');
 function openStory(i){
